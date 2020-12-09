@@ -1,0 +1,182 @@
+body {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 96, 33, 1) 0%,
+        rgba(255, 178, 46, 1) 54%,
+        rgba(0, 207, 107, 1) 100%
+    );
+}
+
+/* div box styling */
+.container {
+    margin: auto;
+    width: 650px;
+    height: 550px;
+    position: relative;
+}
+
+.welcome {
+    background: white;
+    width: 650px;
+    height: 415px;
+    position: absolute;
+    top: 25%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pinkbox {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    background: #374147;
+    width: 320px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.nodisplay {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.leftbox,
+.rightbox {
+    position: absolute;
+    width: 50%;
+    transition: 1s all ease;
+}
+
+.leftbox {
+    left: -2%;
+}
+.rightbox {
+    right: -2%;
+}
+
+/* font & button styling */
+h1 {
+    text-align: center;
+    margin-top: 95px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2em;
+    letter-spacing: 8px;
+}
+
+.title {
+    color: white;
+    font-size: 1.8em;
+    line-height: 1.1em;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 20%;
+}
+.desc {
+    margin-top: -8px;
+}
+.account {
+    margin-top: 45%;
+    font-size: 10px;
+}
+p {
+    font-size: 0.7em;
+    letter-spacing: 2px;
+    color: gray;
+    text-align: center;
+}
+
+span {
+    color: white;
+}
+
+.flower {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 0%;
+    left: 12%;
+    margin-top: 70px;
+    opacity: 0.7;
+}
+
+.smaller {
+    width: 90px;
+    height: 100px;
+    top: 48%;
+    left: 38%;
+    opacity: 0.9;
+}
+
+button {
+    padding: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    border-radius: 10px;
+    margin: auto;
+    outline: none;
+    display: block;
+}
+
+.button {
+    margin-top: 3%;
+    background: white;
+    color: #374147;
+    border: solid 1px white;
+}
+
+/* Para el estilo */
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 7px;
+}
+.more-padding {
+    padding-top: 35px;
+}
+.submit {
+    margin-top: 70px;
+    padding: 12px;
+    border-color: black;
+}
+
+input {
+    background: white;
+    width: 75%;
+    color: grey;
+    border: none;
+    padding: 9px;
+    margin: 15px;
+}
+
+label {
+    font-family: sans-serif;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+.checkbox {
+    display: inline;
+    white-space: nowrap;
+    position: relative;
+    left: -62px;
+    top: 5px;
+}
+
+input[type="checkbox"] {
+    width: 7px;
+    background: grey;
+}
+
+.checkbox input[type="checkbox"]:checked + label {
+    color: grey;
+    transition: 0.5s all ease;
+}
