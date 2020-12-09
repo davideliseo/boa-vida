@@ -16,6 +16,11 @@ class CreateInsumosTable extends Migration
         Schema::create('insumos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('fecha_vencimiento');
+            $table->date('fecha_compra');
+            $table->unsignedBigInteger('cantidad');
+            $table->decimal('precio');
+            $table->foreignId('abastecido_por');
         });
     }
 

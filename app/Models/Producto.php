@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+
+    // TODO: confirmar.
+    public function insumos()
+    {
+        return $this->hasMany(Insumo::class);
+    }
 }

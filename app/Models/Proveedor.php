@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Proveedor extends Model
 {
     use HasFactory;
+
+    public function insumos()
+    {
+        return $this->hasMany(Insumo::class);
+    }
 }

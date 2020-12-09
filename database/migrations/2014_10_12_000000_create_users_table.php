@@ -21,6 +21,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('rut')->unique();
+            $table->string('direccion');
+            $table->string('telefono');
+
+            // TODO (david): confirmar si hay solo admin y usuario normal (bool) o hay más tipos de usuario (enum).
+            // $table->enum('tipo', ['admin', 'vendedor', 'productor']);
+            $table->boolean('es_admin')->default(false);
         });
     }
 
