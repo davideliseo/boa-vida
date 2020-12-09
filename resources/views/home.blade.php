@@ -37,7 +37,7 @@
                 </li>
             </ul>
         </li>
-        <li><a href="#"><i class="fa fa-bullhorn"></i> Clientes</a></li>
+        <li><a href="#"><i class="fa fa-bullhorn"></i> Ventas</a></li>
         <li><a href="#"><i class="fa fa-tags"></i> Usuarios</a>
             <ul class="sub-menu">
                 <li><a href="#">Registrar usuario</a></li>
