@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Boa Vida</title>
+    <title>Boa Vida | Inicio</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 </head>
@@ -22,11 +22,10 @@
     </nav>
     <div class="welcome">
         <div class="container">
-            <div class="flower" <a href="https://ibb.co/sg1Wt1v"><img src="https://i.ibb.co/j8wJHwv/31389384-217395775700141-2074199862273900544-o.jpg" alt="31389384-217395775700141-2074199862273900544-o">
-
-                </a>
-
+            <div class="flower">
+                <img src="/img/logo.jpg" alt="Logo Boa Vida">
                 <h1>Bienvenido:</h1>
+                {{--TODO: reemplazar con nombre de usuario--}}
                 <h2>"Usuario"</h2>
                 <p>Al sistema de inventario "Boa Vida"</p>
 

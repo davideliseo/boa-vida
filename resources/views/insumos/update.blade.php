@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Boa Vida</title>
+    <title>Boa Vida | Insumos | Editar<</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 </head>
