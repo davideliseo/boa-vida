@@ -9,6 +9,8 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // TODO: confirmar.
     public function insumos()
     {

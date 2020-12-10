@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class VentasController extends Controller
+class InsumosController extends Controller
 {
     public function __construct()
     {
@@ -14,26 +14,26 @@ class VentasController extends Controller
 
     public function index()
     {
-        return view('ventas.index');
+        return view('insumos.index');
     }
 
-    public function show($venta)
+    public function show($insumo)
     {
-        dd($venta);
+        dd($insumo);
     }
 
     public function create()
     {
-        return view('ventas.create');
+        return view('insumos.create');
     }
 
     public function update()
     {
-        return view('ventas.update');
+        return view('insumos.update');
     }
 
     public function store()
     {
-        return redirect('/ventas');
+        return redirect('/insumos');
     }
 }

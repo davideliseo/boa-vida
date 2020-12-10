@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Insumo extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function proveedor()
+    {
+        return $this->belongsTo(Proveedor::class);
+    }
 }

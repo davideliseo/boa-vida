@@ -9,6 +9,8 @@ class Proveedor extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function insumos()
     {
         return $this->hasMany(Insumo::class);

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class VentasController extends Controller
+class ProveedoresController extends Controller
 {
     public function __construct()
     {
@@ -14,26 +14,26 @@ class VentasController extends Controller
 
     public function index()
     {
-        return view('ventas.index');
+        return view('proveedores.index');
     }
 
-    public function show($venta)
+    public function show($proveedor)
     {
-        dd($venta);
+        dd($proveedor);
     }
 
     public function create()
     {
-        return view('ventas.create');
+        return view('proveedores.create');
     }
 
     public function update()
     {
-        return view('ventas.update');
+        return view('proveedores.update');
     }
 
     public function store()
     {
-        return redirect('/ventas');
+        return redirect('/proveedores');
     }
 }
