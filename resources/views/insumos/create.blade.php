@@ -3,13 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>CodePen - Boa Vida</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
 </head>
 
 <body>
-    insumos.create
+<nav>
+    <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>
+    <ul class="menu">
+        <li><a href="/"><i class="fa fa-user"></i> Boa Vida</a></li>
+        <li><a href="/productos"><i class="fa fa-camera"></i> Productos</a></li>
+        <li><a href="/insumos"><i class="fa fa-bullhorn"></i> Insumos</a></li>
+        <li><a href="/ventas"><i class="fa fa-bullhorn"></i> Ventas </a></li>
+        <li><a href="/proveedores"><i class="fa fa-bullhorn"></i> Proveedores</a></li>
+        <li><a href="/usuarios"><i class="fa fa-tags"></i> Usuarios</a></li>
+    </ul>
+</nav>
 </body>
 
 </html>

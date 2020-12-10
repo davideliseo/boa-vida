@@ -44,7 +44,7 @@ nav {
     display: block;
     background: 	#374147;
     font-size: 2em;
-    }
+}
 
 
 .menu {
@@ -271,55 +271,55 @@ a.homer {
 }
 
 .container {
-  margin: 340px;
-  width: 650px;
-  height: 650px;
-  position: relative;
+    margin: 340px;
+    width: 650px;
+    height: 650px;
+    position: relative;
 }
 
 .welcome {
-  background: white;
-  width: 1300px;
-  height: 1000px;
-  border-radius: 190px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
-  max-width: 2000px;
-  margin: 0 auto;
-  margin-radius: 1000 auto;
-  margin-top: -200px;
-  margin-left: 400px;
+    background: white;
+    width: 1300px;
+    height: 1000px;
+    border-radius: 190px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+    max-width: 2000px
+    margin: 0 auto;
+    margin-radius: 1000 auto;
+    margin-top: -200px;
+    margin-left: 400px;
 }
 
 h1 {
-  text-align: center;
-  top: 50px;
-  text-transform: uppercase;
-  color: black;
-  font-size: 3em;
-  letter-spacing: 8px;
+    text-align: center;
+    top: 50px;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3em;
+    letter-spacing: 8px;
 }
 
 h2 {
-  text-align: center;
-  margin-top: 30px;
-  text-transform: uppercase;
-  color: rgba(255,96,33,1) ;
-  font-size: 3em;
-  letter-spacing: 8px;
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: rgba(255,96,33,1) ;
+    font-size: 3em;
+    letter-spacing: 8px;
 }
 
 .flower {
-  width:600px;
-  height:600px;
-  border-radius:5px 5px 5px 5px;
-  opacity: .7;
+    width:600px;
+    height:600px;
+    border-radius:5px 5px 5px 5px;
+    opacity: .7;
 
 }
 
 p {
-  font-size: 3em;
-  letter-spacing: 3px;
-  color: Black;
-  text-align: center;
-  margin-top: 30px;
+    font-size: 3em;
+    letter-spacing: 3px;
+    color: Black;
+    text-align: center;
+    margin-top: 30px;
 }
