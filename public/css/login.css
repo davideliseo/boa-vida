@@ -1,18 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
 
 body {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 96, 33, 1) 0%,
-        rgba(255, 178, 46, 1) 54%,
-        rgba(0, 207, 107, 1) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(255, 96, 33, 1) 0%,
+            rgba(255, 178, 46, 1) 54%,
+            rgba(0, 207, 107, 1) 100%);
 
     color: #EAC7CC;
-    font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+    font: 14px "Open Sans", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     width: 100%;
+}
+
+a:link {
+    color: #ffc0cb;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #d967dd;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #da7384;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 /* div box styling */
@@ -61,6 +83,7 @@ body {
 .leftbox {
     left: -2%;
 }
+
 .rightbox {
     right: -2%;
 }
@@ -84,13 +107,16 @@ h1 {
     font-weight: 300;
     margin-top: 20%;
 }
+
 .desc {
     margin-top: -8px;
 }
+
 .account {
     margin-top: 45%;
     font-size: 10px;
 }
+
 p {
     font-size: 0.7em;
     letter-spacing: 2px;
@@ -146,9 +172,11 @@ form {
     flex-direction: column;
     padding-top: 7px;
 }
+
 .more-padding {
     padding-top: 35px;
 }
+
 .submit {
     margin-top: 70px;
     padding: 12px;
@@ -184,7 +212,7 @@ input[type="checkbox"] {
     background: grey;
 }
 
-.checkbox input[type="checkbox"]:checked + label {
+.checkbox input[type="checkbox"]:checked+label {
     color: grey;
     transition: 0.5s all ease;
 }

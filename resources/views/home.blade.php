@@ -18,6 +18,20 @@
             <li><a href="/ventas"><i class="fa fa-bullhorn"></i> Ventas </a></li>
             <li><a href="/proveedores"><i class="fa fa-bullhorn"></i> Proveedores</a></li>
             <li><a href="/usuarios"><i class="fa fa-tags"></i> Usuarios</a></li>
+            <li><a href="#"><i class="fa fa-camera"></i>{{ Auth::user()->email }}</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            Cerrar sesión
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <div class="welcome">
@@ -28,7 +42,6 @@
                 {{--TODO: reemplazar con nombre de usuario--}}
                 <h2>"Usuario"</h2>
                 <p>Al sistema de inventario "Boa Vida"</p>
-
             </div>
         </div>
     </div>

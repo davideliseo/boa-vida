@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         // FIXME (david): desactive el middleware para testear el frontend sin tener que preocuparme del backend (send help).
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

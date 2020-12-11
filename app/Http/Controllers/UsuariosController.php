@@ -8,8 +8,7 @@ class UsuariosController extends Controller
 {
     public function __construct()
     {
-        // FIXME: reactivar middleware.
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index()
