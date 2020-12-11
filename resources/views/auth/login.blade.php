@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="rightbox">
-                <img class="flower" src="https://i.ibb.co/sg1Wt1v/31389384-217395775700141-2074199862273900544-o.jpg" alt="" />
+                <img class="flower" src="/img/logo.jpg" alt="" />
             </div>
         </div>
     </div>

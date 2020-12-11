@@ -17,6 +17,7 @@ class CreateInsumosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->date('fecha_vencimiento');
+            // TODO: confirmar si es necesario, o basta con los timestamps.
             $table->date('fecha_compra');
             $table->unsignedBigInteger('cantidad');
             $table->decimal('precio');

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Boa Vida | Inicio</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
 
 </head>
 
@@ -31,7 +31,7 @@
 
             </div>
         </div>
-
+    </div>
 </body>
 
 </html>

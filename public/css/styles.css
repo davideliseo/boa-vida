@@ -173,7 +173,6 @@ nav {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
-
 }
 
 .responsive-menu:hover {
@@ -283,7 +282,7 @@ a.homer {
     height: 1000px;
     border-radius: 190px;
     box-shadow: 5px 5px 5px rgba(0,0,0,.1);
-    max-width: 2000px
+    max-width: 2000px;
     margin: 0 auto;
     margin-radius: 1000 auto;
     margin-top: -200px;
