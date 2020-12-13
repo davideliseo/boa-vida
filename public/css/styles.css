@@ -336,7 +336,7 @@ a.homer {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
     max-width: 2000px;
     margin: 0 auto;
-    margin-radius: 1000 auto;
+    border-radius: 1000 auto;
     margin-top: -200px;
     margin-left: 400px;
 }
@@ -373,4 +373,10 @@ p {
     color: Black;
     text-align: center;
     margin-top: 30px;
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
