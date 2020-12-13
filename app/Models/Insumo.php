@@ -15,4 +15,9 @@ class Insumo extends Model
     {
         return $this->belongsTo(Proveedor::class);
     }
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
+    }
 }

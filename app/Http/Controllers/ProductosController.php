@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductosController extends Controller
 {
@@ -16,9 +18,9 @@ class ProductosController extends Controller
         return view('productos.index');
     }
 
-    public function show($producto)
+    public function show(Producto $producto)
     {
-        dd($producto);
+        return view('productos.show', compact('producto'));
     }
 
     public function create()
@@ -26,13 +28,41 @@ class ProductosController extends Controller
         return view('productos.create');
     }
 
-    public function update()
+    public function edit(Producto $producto)
     {
-        return view('productos.update');
+        return view('productos.edit', compact('producto'));
+    }
+
+    public function update(Producto $producto)
+    {
+        $data = request()->validate([
+            'nombre' => 'required',
+            'precio' => 'numeric',
+            'fecha_elaboracion' => 'date',
+            'cantidad' => 'integer'
+        ]);
+
+        $producto->update($data);
+        return redirect('/productos');
     }
 
     public function store()
     {
+        $data = request()->validate([
+            'nombre' => 'required',
+            'precio' => 'numeric',
+            'fecha_elaboracion' => 'date',
+            'cantidad' => 'integer'
+        ]);
+
+        DB::table('productos')->insert($data);
+
+        return redirect('/productos');
+    }
+
+    public function destroy(Producto $producto)
+    {
+        $producto->delete();
         return redirect('/productos');
     }
 }

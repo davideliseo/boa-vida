@@ -25,8 +25,6 @@
 <body>
     <div id="app">
         <nav>
-            <a id="resp-menu" class="responsive-menu" href="#"><i
-                    class="fa fa-reorder"></i> Menu</a>
             <ul class="menu">
                 <li><a href="/"><i class="fa fa-user"></i> Boa Vida</a></li>
                 <li><a href="/productos"><i class="fa fa-camera"></i>

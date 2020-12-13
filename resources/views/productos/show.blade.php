@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.galeria')
 
 @section('content')
 

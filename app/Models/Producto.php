@@ -11,7 +11,6 @@ class Producto extends Model
 
     protected $guarded = [];
 
-    // TODO: confirmar.
     public function insumos()
     {
         return $this->hasMany(Insumo::class);

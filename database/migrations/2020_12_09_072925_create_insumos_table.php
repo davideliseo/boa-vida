@@ -22,6 +22,8 @@ class CreateInsumosTable extends Migration
             $table->unsignedBigInteger('cantidad');
             $table->decimal('precio');
             $table->foreignId('abastecido_por');
+            // TODO: multiples productos.
+            $table->foreignId('producto_id');
         });
     }
 
