@@ -14,7 +14,7 @@
                             @csrf
                             @method('PATCH')
                             <x-formulario ruta="productos.update" btntexto="Editar"
-                                :encabezados="\App\Models\Producto::$camposIndexables" :item="$producto" />
+                                :encabezados="\App\Models\Producto::$indexables" :item="$producto" />
                         </form>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
                             btnruta="productos.create" />
                     </div>
                     <div class="card-body">
-                        <x-tabla tabla="productos" :encabezados="\App\Models\Producto::$camposIndexables"
+                        <x-tabla tabla="productos" :encabezados="\App\Models\Producto::$indexables"
                             :coleccion="\App\Models\Producto::all()" />
                     </div>
                 </div>

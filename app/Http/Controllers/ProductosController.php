@@ -36,13 +36,13 @@ class ProductosController extends Controller
     public function update(Producto $producto)
     {
         $data = request()->validate([
-            'nombre' => 'required',
+            'nombre' => ['required'],
             'precio' => ['required', 'numeric'],
-            'cantidad' => 'integer',
-            'fecha_elaboracion' => ['date', 'nullable']
+            'cantidad' => ['required', 'integer'],
+            'fecha_elaboracion' => ''
         ]);
 
-        dd($data);
+        // dd($data);
 
         $producto->update($data);
         return redirect('/productos');
@@ -51,10 +51,10 @@ class ProductosController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'nombre' => 'required',
-            'precio' => 'numeric',
-            'fecha_elaboracion' => ['date', 'nullable'],
-            'cantidad' => 'integer'
+            'nombre' => ['required'],
+            'precio' => ['required', 'numeric'],
+            'cantidad' => ['required', 'integer'],
+            'fecha_elaboracion' => ''
         ]);
 
         DB::table('productos')->insert($data);

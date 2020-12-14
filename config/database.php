@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL = env('DATABASE_URL');
+
 return [
 
     /*

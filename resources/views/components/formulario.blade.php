@@ -12,7 +12,9 @@
                         required
                     @endif
                     autocomplete="{{ $key }}"
-                    autofocus>
+                    @if ($loop->first)
+                        autofocus
+                    @endif>
 
                 @error($key)
                     <span class="invalid-feedback" role="alert">

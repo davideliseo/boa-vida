@@ -10,7 +10,7 @@ class Producto extends Model
     use HasFactory;
 
     protected $guarded = [];
-    public static $camposIndexables = [
+    public static $indexables = [
         'nombre' => [
             'nombreCompleto' => 'Nombre',
             'class' => 'text-left',
@@ -27,7 +27,7 @@ class Producto extends Model
         'fecha_elaboracion' => [
             'nombreCompleto' => 'Fecha de elaboración',
             'class' => 'text-left',
-            'reglas' => ['date', 'nullable']
+            'reglas' => ['nullable']
         ],
     ];
 

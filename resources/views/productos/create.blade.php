@@ -13,9 +13,8 @@
                         <form method="post" action="{{ route('productos.store') }}">
                             @csrf
                             <x-formulario ruta="productos.store" btntexto="Agregar"
-                                :encabezados="\App\Models\Producto::$camposIndexables" :item="null" />
+                                :encabezados="\App\Models\Producto::$indexables" :item="null" />
                         </form>
-
                     </div>
                 </div>
             </div>

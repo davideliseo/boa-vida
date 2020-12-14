@@ -19,7 +19,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->decimal('precio');
             $table->unsignedBigInteger('cantidad');
-            $table->date('fecha_elaboracion')->nullable();
+            $table->datetime('fecha_elaboracion')->nullable();
         });
     }
 
