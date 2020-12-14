@@ -37,10 +37,12 @@ class ProductosController extends Controller
     {
         $data = request()->validate([
             'nombre' => 'required',
-            'precio' => 'numeric',
-            'fecha_elaboracion' => 'date',
-            'cantidad' => 'integer'
+            'precio' => ['required', 'numeric'],
+            'cantidad' => 'integer',
+            'fecha_elaboracion' => ['date', 'nullable']
         ]);
+
+        dd($data);
 
         $producto->update($data);
         return redirect('/productos');
@@ -51,7 +53,7 @@ class ProductosController extends Controller
         $data = request()->validate([
             'nombre' => 'required',
             'precio' => 'numeric',
-            'fecha_elaboracion' => 'date',
+            'fecha_elaboracion' => ['date', 'nullable'],
             'cantidad' => 'integer'
         ]);
 

@@ -1780,7 +1780,7 @@ pre code {
 }
 
 .table thead th {
-  vertical-align: bottom;
+  vertical-align: middle;
   border-bottom: 2px solid #dee2e6;
 }
 
@@ -2023,7 +2023,6 @@ pre code {
 .table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
-  border-color: #dee2e6;
 }
 
 .table-dark {
@@ -10901,6 +10900,7 @@ a.text-dark:focus {
   }
 }
 
+/* Clases personalizadas */
 .menu {
     display: block;
 }
@@ -11021,11 +11021,16 @@ a.text-dark:focus {
 }
 
 body {
-    background: linear-gradient(90deg, rgba(255, 96, 33, 1) 0%, rgba(255, 178, 46, 1) 54%, rgba(0, 207, 107, 1) 100%);
+    /* background: linear-gradient(#ff6021 0%, #ffb22e 50%, #00cf6b 100%); */
+    background: linear-gradient(#ff9966, #ff5e62);
     font: 14px "Open Sans", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     width: 100%;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 nav {
