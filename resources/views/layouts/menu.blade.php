@@ -15,44 +15,55 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         <nav>
             <ul class="menu">
-                <li><a href="/"><i class="fa fa-user"></i> Boa Vida</a></li>
-                <li><a href="/productos"><i class="fa fa-camera"></i>
-                        Productos</a>
+                <li>
+                    <a href="{{ route('home') }}">
+                        Boa Vida
+                    </a>
                 </li>
-                <li><a href="/insumos"><i class="fa fa-bullhorn"></i>
-                        Insumos</a>
+                <li>
+                    <a href="{{ route('productos.index') }}">
+                        Productos
+                    </a>
                 </li>
-                <li><a href="/ventas"><i class="fa fa-bullhorn"></i> Ventas </a>
+                <li>
+                    <a href="{{ route('insumos.index') }}">
+                        Insumos
+                    </a>
                 </li>
-                <li><a href="/proveedores"><i class="fa fa-bullhorn"></i>
-                        Proveedores</a></li>
-                <li><a href="/usuarios"><i class="fa fa-tags"></i> Usuarios</a>
+                <li>
+                    <a href="{{ route('ventas.index') }}">
+                        Ventas
+                    </a>
                 </li>
-                <li><a href="#"><i
-                            class="fa fa-camera"></i>{{ Auth::user()->email }}</a>
+                <li>
+                    <a href="{{ route('proveedores.index') }}">
+                        Proveedores
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('usuarios.index') }}">
+                        Usuarios
+                    </a>
+                </li>
+
+                <li><a href="#">{{ Auth::user()->email }}</a>
                     <ul class="sub-menu">
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();">
                                 Cerrar sesión
                             </a>
 
-                            <form id="logout-form"
-                                action="{{ route('logout') }}" method="POST"
-                                class="d-none">
-                                @csrf
-                            </form>
                         </li>
                     </ul>
                 </li>
