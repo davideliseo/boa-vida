@@ -1,5 +1,9 @@
-@extends('layouts.galeria')
+@extends('layouts.galeria.card')
 
-@section('content')
+@section('card-header')
+    Ficha de producto
+@endsection
+
+@section('card-body')
 
 @endsection
