@@ -41,7 +41,7 @@ class Insumo extends Model
     {
         return array_map(function ($e) {
             return $e['reglas'];
-        }, Producto::$indexables);
+        }, Insumo::$indexables);
     }
 
     public function proveedor()
