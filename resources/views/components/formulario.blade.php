@@ -13,7 +13,7 @@
                     </label>
 
                     <div class="col-md-6">
-                        <input id="{{ $key }}" type="text" class="form-control @error('{{ $key }}') is-invalid @enderror"
+                        <input id="{{ $key }}" type="text" class="form-control @error($key) is-invalid @enderror"
                             name="{{ $key }}" value="{{ old($key) ?? ($item[$key] ?? null) }}"
                             @if (in_array('required', $value['reglas']))
                                 required
@@ -28,7 +28,6 @@
                                 <div class="d-flex pt-1">
                                     <small>{{ $message }}</small>
                                 </div>
-
                             </span>
                         @enderror
                     </div>
