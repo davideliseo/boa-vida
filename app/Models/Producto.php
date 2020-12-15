@@ -10,6 +10,7 @@ class Producto extends Model
     use HasFactory;
 
     protected $guarded = [];
+
     public static $indexables = [
         'nombre' => [
             'nombreCompleto' => 'Nombre',
@@ -31,15 +32,15 @@ class Producto extends Model
         ],
     ];
 
-    public function insumos()
-    {
-        return $this->hasMany(Insumo::class);
-    }
-
     public static function reglas()
     {
         return array_map(function ($e) {
             return $e['reglas'];
         }, Producto::$indexables);
+    }
+
+    public function insumos()
+    {
+        return $this->hasMany(Insumo::class);
     }
 }
