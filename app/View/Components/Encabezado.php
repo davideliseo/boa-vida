@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Cabecera extends Component
+class Encabezado extends Component
 {
     public $titulo;
     public $btntipo;
@@ -21,6 +21,6 @@ class Cabecera extends Component
 
     public function render()
     {
-        return view('components.cabecera');
+        return view('components.encabezado');
     }
 }

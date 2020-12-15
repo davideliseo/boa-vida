@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 
-@section('tarjeta-cabecera')
-    <x-cabecera titulo="Productos" btntipo="btn-primary" btntexto="Agregar" btnruta="productos.create" />
+@section('tarjeta-encabezado')
+    <x-encabezado titulo="Productos" btntipo="btn-primary" btntexto="Agregar" btnruta="productos.create" />
 @endsection
 
 @section('tarjeta-cuerpo')
@@ -9,5 +9,5 @@
 @endsection
 
 @section('contenido')
-    <x-tarjeta :ancho="12" />
+    <x-tarjeta ancho="12" />
 @endsection

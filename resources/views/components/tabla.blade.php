@@ -15,7 +15,11 @@
                 <tr>
                     @foreach ($encabezados as $key => $value)
                         <td scope="col" class="{{ $value['class'] ?? 'text-center' }}">
-                            {{ $item[$key] }}
+                            @if ($loop->first)
+                                <a href="{{ route($tabla . '.show', $item) }}">{{ $item[$key] }}</a>
+                            @else
+                                {{ $item[$key] }}
+                            @endif
                         </td>
                     @endforeach
 
@@ -23,7 +27,7 @@
                         <div class="d-flex">
                             <div class="pr-2">
                                 <a class="btn btn-warning" href="{{ route($tabla . '.edit', $item) }}">
-                                    Modificar
+                                    Editar
                                 </a>
                             </div>
 
@@ -31,7 +35,7 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger"
-                                    onclick="return confirm('¿Está seguro/a que desea eliminar este ítem?')">
+                                        onclick="return confirm('¿Está seguro/a que desea eliminar este ítem?')">
                                     Eliminar
                                 </button>
                             </form>

@@ -23,10 +23,4 @@ class Formulario extends Component
     {
         return view('components.formulario');
     }
-
-    public function patches()
-    {
-        // Si el item existe,  el formulario edita ese item.
-        return $this->item != null;
-    }
 }
