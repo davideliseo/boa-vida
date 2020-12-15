@@ -35,30 +35,15 @@ class ProductosController extends Controller
 
     public function update(Producto $producto)
     {
-        $data = request()->validate([
-            'nombre' => ['required'],
-            'precio' => ['required', 'numeric'],
-            'cantidad' => ['required', 'integer'],
-            'fecha_elaboracion' => ''
-        ]);
-
-        // dd($data);
-
+        $data = request()->validate(Producto::reglas());
         $producto->update($data);
         return redirect('/productos');
     }
 
     public function store()
     {
-        $data = request()->validate([
-            'nombre' => ['required'],
-            'precio' => ['required', 'numeric'],
-            'cantidad' => ['required', 'integer'],
-            'fecha_elaboracion' => ''
-        ]);
-
+        $data = request()->validate(Producto::reglas());
         DB::table('productos')->insert($data);
-
         return redirect('/productos');
     }
 

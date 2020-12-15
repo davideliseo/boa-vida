@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('content')
+@section('contenido')
     <div class="welcome">
         <div class="container">
             <img class="displayed" src="/img/logo.jpg" alt="Logo Boa Vida">

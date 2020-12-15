@@ -1,9 +1,9 @@
-@extends('layouts.galeria.card')
+@extends('layouts.main')
 
-@section('card-header')
-    Ficha de producto
+@section('tarjeta-cabecera')
+    <x-cabecera titulo="Ficha de producto" btntipo="btn-dark" btntexto="Atrás" btnruta="productos.index" />
 @endsection
 
-@section('card-body')
+@section('tarjeta-cuerpo')
 
 @endsection

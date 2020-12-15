@@ -11,11 +11,6 @@ class Formulario extends Component
     public $item;
     public $btntexto;
 
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
     public function __construct($ruta, $encabezados, $item, $btntexto)
     {
         $this->ruta = $ruta;
@@ -24,11 +19,6 @@ class Formulario extends Component
         $this->btntexto = $btntexto;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|string
-     */
     public function render()
     {
         return view('components.formulario');

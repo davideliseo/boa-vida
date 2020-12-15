@@ -27,12 +27,19 @@ class Producto extends Model
         'fecha_elaboracion' => [
             'nombreCompleto' => 'Fecha de elaboración',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'reglas' => ['nullable', 'date']
         ],
     ];
 
     public function insumos()
     {
         return $this->hasMany(Insumo::class);
+    }
+
+    public static function reglas()
+    {
+        return array_map(function ($e) {
+            return $e['reglas'];
+        }, Producto::$indexables);
     }
 }
