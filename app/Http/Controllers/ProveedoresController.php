@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProveedoresController extends Controller
 {
@@ -16,9 +18,9 @@ class ProveedoresController extends Controller
         return view('proveedores.index');
     }
 
-    public function show($proveedor)
+    public function show(Proveedor $proveedor)
     {
-        dd($proveedor);
+        return view('proveedores.show', compact('proveedor'));
     }
 
     public function create()
@@ -26,13 +28,28 @@ class ProveedoresController extends Controller
         return view('proveedores.create');
     }
 
-    public function update()
+    public function edit(Proveedor $proveedor)
     {
-        return view('proveedores.update');
+        return view('proveedores.edit', compact('proveedor'));
+    }
+
+    public function update(Proveedor $proveedor)
+    {
+        $data = request()->validate(Proveedor::reglas());
+        $proveedor->update($data);
+        return redirect('/proveedores');
     }
 
     public function store()
     {
+        $data = request()->validate(Proveedor::reglas());
+        DB::table('proveedores')->insert($data);
+        return redirect('/proveedores');
+    }
+
+    public function destroy(Proveedor $proveedor)
+    {
+        $proveedor->delete();
         return redirect('/proveedores');
     }
 }
