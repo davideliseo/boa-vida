@@ -54,9 +54,9 @@ Route::patch  ('/proveedores/{proveedor}',        [ProveedoresController::class,
 Route::delete ('/proveedores/{proveedor}',        [ProveedoresController::class, 'destroy' ])->name('proveedores.destroy');
 
 // Usuarios
-Route::get    ('/usuarios',                  [UsersController::class, 'index'   ])->name('usuarios.index');
-Route::get    ('/usuarios/agregar',          [UsersController::class, 'create'  ])->name('usuarios.create');
-Route::post   ('/usuarios',                  [UsersController::class, 'store'   ])->name('usuarios.store');
+Route::get    ('/usuarios',               [UsersController::class, 'index'   ])->name('usuarios.index');
+Route::get    ('/usuarios/agregar',       [UsersController::class, 'create'  ])->name('usuarios.create');
+Route::post   ('/usuarios',               [UsersController::class, 'store'   ])->name('usuarios.store');
 Route::get    ('/usuarios/{user}',        [UsersController::class, 'show'    ])->name('usuarios.show');
 Route::get    ('/usuarios/{user}/editar', [UsersController::class, 'edit'    ])->name('usuarios.edit');
 Route::patch  ('/usuarios/{user}',        [UsersController::class, 'update'  ])->name('usuarios.update');

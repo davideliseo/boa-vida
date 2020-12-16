@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.app')
 
 @section('tarjeta-encabezado')
     <x-encabezado titulo="Usuarios" btntipo="btn-primary" btntexto="Agregar" btnruta="usuarios.create" />

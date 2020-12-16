@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.app')
 
 @section('tarjeta-encabezado')
     <x-encabezado titulo="Agregar proveedor" btntipo="btn-dark" btntexto="Atrás" btnruta="proveedores.index" />

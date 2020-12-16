@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.app')
 
 @section('tarjeta-encabezado')
     <x-encabezado titulo="Editar insumo" btntipo="btn-dark" btntexto="Atrás" btnruta="insumos.index" />
