@@ -19,7 +19,7 @@ class CreateProveedoresTable extends Migration
             $table->string('nombre');
             $table->string('rut')->unique()->nullable();
             $table->string('direccion')->nullable();
-            $table->string('correo')->nullable();
+            $table->string('email')->nullable();
             $table->string('telefono')->nullable();
             $table->string('nombre_contacto')->nullable();
         });

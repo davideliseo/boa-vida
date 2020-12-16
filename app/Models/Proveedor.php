@@ -28,8 +28,8 @@ class Proveedor extends Model
             'class' => 'text-left',
             'reglas' => ['nullable']
         ],
-        'correo' => [
-            'nombreCompleto' => 'Correo',
+        'email' => [
+            'nombreCompleto' => 'E-mail',
             'class' => 'text-left',
             'reglas' => ['nullable', 'email']
         ],

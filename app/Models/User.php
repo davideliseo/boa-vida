@@ -48,7 +48,7 @@ class User extends Authenticatable
             'reglas' => ['required']
         ],
         'email' => [
-            'nombreCompleto' => 'Email',
+            'nombreCompleto' => 'E-mail',
             'class' => 'text-left',
             'reglas' => ['required', 'email']
         ],
