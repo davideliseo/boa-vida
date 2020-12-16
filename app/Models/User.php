@@ -40,4 +40,39 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static $indexables = [
+        'name' => [
+            'nombreCompleto' => 'Nombre',
+            'class' => 'text-left',
+            'reglas' => ['required']
+        ],
+        'email' => [
+            'nombreCompleto' => 'Email',
+            'class' => 'text-left',
+            'reglas' => ['required', 'email']
+        ],
+        'rut' => [
+            'nombreCompleto' => 'RUT',
+            'class' => 'text-left',
+            'reglas' => ['nullable']
+        ],
+        'direccion' => [
+            'nombreCompleto' => 'Dirección',
+            'class' => 'text-left',
+            'reglas' => ['nullable']
+        ],
+        'telefono' => [
+            'nombreCompleto' => 'Teléfono',
+            'class' => 'text-left',
+            'reglas' => ['nullable']
+        ],
+    ];
+
+    public static function reglas()
+    {
+        return array_map(function ($e) {
+            return $e['reglas'];
+        }, User::$indexables);
+    }
 }

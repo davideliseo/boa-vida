@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InsumosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
-use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VentasController;
 
 /*
@@ -54,13 +54,13 @@ Route::patch  ('/proveedores/{proveedor}',        [ProveedoresController::class,
 Route::delete ('/proveedores/{proveedor}',        [ProveedoresController::class, 'destroy' ])->name('proveedores.destroy');
 
 // Usuarios
-Route::get    ('/usuarios',                  [UsuariosController::class, 'index'   ])->name('usuarios.index');
-Route::get    ('/usuarios/agregar',          [UsuariosController::class, 'create'  ])->name('usuarios.create');
-Route::post   ('/usuarios',                  [UsuariosController::class, 'store'   ])->name('usuarios.store');
-Route::get    ('/usuarios/{usuario}',        [UsuariosController::class, 'show'    ])->name('usuarios.show');
-Route::get    ('/usuarios/{usuario}/editar', [UsuariosController::class, 'edit'    ])->name('usuarios.edit');
-Route::patch  ('/usuarios/{usuario}',        [UsuariosController::class, 'update'  ])->name('usuarios.update');
-Route::delete ('/usuarios/{usuario}',        [UsuariosController::class, 'destroy' ])->name('usuarios.destroy');
+Route::get    ('/usuarios',                  [UsersController::class, 'index'   ])->name('usuarios.index');
+Route::get    ('/usuarios/agregar',          [UsersController::class, 'create'  ])->name('usuarios.create');
+Route::post   ('/usuarios',                  [UsersController::class, 'store'   ])->name('usuarios.store');
+Route::get    ('/usuarios/{user}',        [UsersController::class, 'show'    ])->name('usuarios.show');
+Route::get    ('/usuarios/{user}/editar', [UsersController::class, 'edit'    ])->name('usuarios.edit');
+Route::patch  ('/usuarios/{user}',        [UsersController::class, 'update'  ])->name('usuarios.update');
+Route::delete ('/usuarios/{user}',        [UsersController::class, 'destroy' ])->name('usuarios.destroy');
 
 // Ventas
 Route::get    ('/ventas',                [VentasController::class, 'index'   ])->name('ventas.index');
