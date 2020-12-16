@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VentasController extends Controller
 {
@@ -16,9 +18,9 @@ class VentasController extends Controller
         return view('ventas.index');
     }
 
-    public function show($venta)
+    public function show(Venta $venta)
     {
-        dd($venta);
+        return view('ventas.show', compact('venta'));
     }
 
     public function create()
@@ -26,13 +28,28 @@ class VentasController extends Controller
         return view('ventas.create');
     }
 
-    public function update()
+    public function edit(Venta $venta)
     {
-        return view('ventas.update');
+        return view('ventas.edit', compact('venta'));
+    }
+
+    public function update(Venta $venta)
+    {
+        $data = request()->validate(Venta::reglas());
+        $venta->update($data);
+        return redirect('/ventas');
     }
 
     public function store()
     {
+        $data = request()->validate(Venta::reglas());
+        DB::table('ventas')->insert($data);
+        return redirect('/ventas');
+    }
+
+    public function destroy(Venta $venta)
+    {
+        $venta->delete();
         return redirect('/ventas');
     }
 }

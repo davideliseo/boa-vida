@@ -1,12 +1,12 @@
 @extends('layouts.menu')
 
 @section('tarjeta-encabezado')
-    <x-encabezado titulo="Editar producto" btntipo="btn-dark" btntexto="Atrás" btnruta="productos.index" />
+    <x-encabezado titulo="Editar venta" btntipo="btn-dark" btntexto="Atrás" btnruta="ventas.index" />
 @endsection
 
 @section('tarjeta-cuerpo')
-    <x-formulario ruta="productos.update" btntexto="Editar" :encabezados="\App\Models\Producto::$indexables"
-        :item="$producto" />
+    <x-formulario ruta="ventas.update" btntexto="Editar" :encabezados="\App\Models\Venta::$indexables"
+        :item="$venta" />
 @endsection
 
 @section('contenido')

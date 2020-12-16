@@ -18,7 +18,7 @@ class CreateVentasTable extends Migration
             $table->timestamps();
             $table->decimal('monto');
             $table->string('nombre_cliente');
-            $table->string('telefono_cliente');
+            $table->string('telefono_cliente')->nullable();
         });
     }
 
