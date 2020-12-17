@@ -30,6 +30,11 @@ class Producto extends Model
             'class' => 'text-left',
             'reglas' => ['nullable', 'date']
         ],
+        'fecha_vencimiento' => [
+            'nombreCompleto' => 'Fecha de vencimiento',
+            'class' => 'text-left',
+            'reglas' => ['nullable', 'date']
+        ],
     ];
 
     public static function reglas()

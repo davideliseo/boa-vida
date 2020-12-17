@@ -22,7 +22,7 @@ class CreateInsumosTable extends Migration
             $table->date('fecha_vencimiento')->nullable();
             // TODO: confirmar si es necesario, o basta con los timestamps.
             $table->date('fecha_compra')->nullable();
-            $table->foreignId('abastecido_por')->nullable();
+            $table->foreignId('proveedor_id')->nullable();
         });
     }
 
