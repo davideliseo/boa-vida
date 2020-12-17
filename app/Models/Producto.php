@@ -41,6 +41,6 @@ class Producto extends Model
 
     public function insumos()
     {
-        return $this->hasMany(Insumo::class);
+        return $this->belongsToMany(Insumo::class);
     }
 }

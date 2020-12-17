@@ -23,8 +23,6 @@ class CreateInsumosTable extends Migration
             // TODO: confirmar si es necesario, o basta con los timestamps.
             $table->date('fecha_compra')->nullable();
             $table->foreignId('abastecido_por')->nullable();
-            // TODO: multiples productos.
-            $table->foreignId('producto_id')->nullable();
         });
     }
 
