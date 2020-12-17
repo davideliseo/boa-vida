@@ -43,4 +43,9 @@ class Producto extends Model
     {
         return $this->belongsToMany(Insumo::class);
     }
+
+    public function ventas()
+    {
+        return $this->belongsToMany(Venta::class);
+    }
 }
