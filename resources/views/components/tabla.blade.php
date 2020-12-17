@@ -24,9 +24,9 @@
                     @endforeach
 
                     <td>
-                        <div class="d-flex">
+                        <div class="d-flex align-items-center">
                             <div class="pr-2">
-                                <a class="btn btn-warning" href="{{ route($tabla . '.edit', $item) }}">
+                                <a class="btn-v2 btn-deg-orange shadow-sm" href="{{ route($tabla . '.edit', $item) }}">
                                     Editar
                                 </a>
                             </div>
@@ -34,7 +34,7 @@
                             <form method="POST" action="{{ route($tabla . '.destroy', $item) }}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"
+                                <button type="submit" class="btn-v2 btn-deg-red shadow-sm"
                                         onclick="return confirm('¿Está seguro/a que desea eliminar este ítem?')">
                                     Eliminar
                                 </button>

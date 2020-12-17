@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('tarjeta-encabezado')
-    <x-encabezado titulo="Productos" btntipo="btn-primary" btntexto="Agregar" btnruta="productos.create" />
+    <x-encabezado titulo="Productos" btntipo="btn-deg-green-2" btntexto="Agregar" btnruta="productos.create" />
 @endsection
 
 @section('tarjeta-cuerpo')

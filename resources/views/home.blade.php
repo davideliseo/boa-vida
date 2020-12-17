@@ -15,7 +15,7 @@
     <div class="container pt-5">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            <div class="card shadow" style="border-radius: 1rem;">
+            <div class="card shadow" style="border-radius: 0.5rem;">
                 <div class="card-body">
                     <img class="mx-auto d-block" src="/img/logo.jpg" width="60%" alt="Logo Boa Vida">
                     <div class="d-flex flex-column mb-3">

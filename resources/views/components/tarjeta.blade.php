@@ -1,4 +1,4 @@
-<div class="container pt-4">
+<div class="container pt-2">
     <div class="row justify-content-center">
         <div class="col-md-{{ $ancho }}">
             <div class="card shadow">

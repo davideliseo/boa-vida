@@ -65,7 +65,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-purple-moon rounded shadow-sm">
+                                <button type="submit" class="btn btn-primary rounded shadow-sm">
                                     Registrarse
                                 </button>
                             </div>
