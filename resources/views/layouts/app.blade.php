@@ -38,27 +38,27 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('productos.index') }}">
+                                <a class="nav-link" href="{{ route('products.index') }}">
                                     Productos
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('insumos.index') }}">
+                                <a class="nav-link" href="{{ route('supplies.index') }}">
                                     Insumos
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('ventas.index') }}">
+                                <a class="nav-link" href="{{ route('sales.index') }}">
                                     Ventas
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('proveedores.index') }}">
+                                <a class="nav-link" href="{{ route('suppliers.index') }}">
                                     Proveedores
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('usuarios.index') }}">
+                                <a class="nav-link" href="{{ route('users.index') }}">
                                     Usuarios
                                 </a>
                             </li>
@@ -103,7 +103,7 @@
         </nav>
 
         <main class="py-4">
-            @yield('contenido')
+            @yield('content')
         </main>
     </div>
 </body>

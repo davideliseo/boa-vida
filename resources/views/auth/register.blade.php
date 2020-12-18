@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('contenido')
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <x-encabezado titulo="Registrarse" btntipo="btn-dark" btntexto="Atrás" btnruta="login" />
+                    <x-header titulo="Registrarse" btntipo="btn-dark" btntexto="Atrás" btnruta="login" />
                 </div>
 
                 <div class="card-body">

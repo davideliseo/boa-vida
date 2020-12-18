@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Formulario extends Component
+class Form extends Component
 {
     public $ruta;
     public $encabezados;
@@ -21,6 +21,6 @@ class Formulario extends Component
 
     public function render()
     {
-        return view('components.formulario');
+        return view('components.form');
     }
 }

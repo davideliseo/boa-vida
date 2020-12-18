@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ProductosController extends Controller
+class ProductController extends Controller
 {
     public function __construct()
     {
@@ -15,41 +15,41 @@ class ProductosController extends Controller
 
     public function index()
     {
-        return view('productos.index');
+        return view('products.index');
     }
 
-    public function show(Producto $producto)
+    public function show(Product $product)
     {
-        return view('productos.show', compact('producto'));
+        return view('products.show', compact('producto'));
     }
 
     public function create()
     {
-        return view('productos.create');
+        return view('products.create');
     }
 
-    public function edit(Producto $producto)
+    public function edit(Product $product)
     {
-        return view('productos.edit', compact('producto'));
+        return view('products.edit', compact('producto'));
     }
 
-    public function update(Producto $producto)
+    public function update(Product $product)
     {
-        $data = request()->validate(Producto::reglas());
-        $producto->update($data);
-        return redirect('/productos');
+        $data = request()->validate(Product::rules());
+        $product->update($data);
+        return redirect('products.index');
     }
 
     public function store()
     {
-        $data = request()->validate(Producto::reglas());
-        DB::table('productos')->insert($data);
-        return redirect('/productos');
+        $data = request()->validate(Product::rules());
+        DB::table('products')->insert($data);
+        return redirect('products.index');
     }
 
-    public function destroy(Producto $producto)
+    public function destroy(Product $product)
     {
-        $producto->delete();
-        return redirect('/productos');
+        $product->delete();
+        return redirect('products.index');
     }
 }

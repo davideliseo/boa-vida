@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('tarjeta-encabezado')
-    <x-encabezado titulo="Ficha de producto" btntipo="btn-dark" btntexto="Atrás" btnruta="productos.index" />
+@section('card-header')
+    <x-header titulo="Ficha de producto" btntipo="btn-dark" btntexto="Atrás" btnruta="products.index" />
 @endsection
 
-@section('tarjeta-cuerpo')
-    <x-detalle :item="$producto" :encabezados="\App\Models\Producto::$indexables" btntexto="Editar" tabla="productos" />
+@section('card-body')
+    <x-sheet :item="$producto" :encabezados="\App\Models\Product::$indexables" btntexto="Editar" tabla="products" />
 @endsection
 
-@section('contenido')
-    <x-tarjeta ancho="8" />
+@section('content')
+    <x-card ancho="8" />
 @endsection

@@ -21,7 +21,7 @@ class CreateSuppliesTable extends Migration
             $table->decimal('price');
             $table->date('expiry_date')->nullable();
             // TODO: confirmar si es necesario, o basta con los timestamps.
-            $table->date('import_date')->nullable();
+            $table->date('purchase_date')->nullable();
             $table->foreignId('supplier_id')->nullable();
         });
     }

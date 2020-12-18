@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Insumo;
+use App\Models\Supply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class InsumosController extends Controller
+class SupplyController extends Controller
 {
     public function __construct()
     {
@@ -15,41 +15,41 @@ class InsumosController extends Controller
 
     public function index()
     {
-        return view('insumos.index');
+        return view('supplies.index');
     }
 
-    public function show(Insumo $insumo)
+    public function show(Supply $supply)
     {
-        return view('insumos.show', compact('insumo'));
+        return view('supplies.show', compact('supply'));
     }
 
     public function create()
     {
-        return view('insumos.create');
+        return view('supplies.create');
     }
 
-    public function edit(Insumo $insumo)
+    public function edit(Supply $supply)
     {
-        return view('insumos.edit', compact('insumo'));
+        return view('supplies.edit', compact('supply'));
     }
 
-    public function update(Insumo $insumo)
+    public function update(Supply $supply)
     {
-        $data = request()->validate(Insumo::reglas());
-        $insumo->update($data);
-        return redirect('/insumos');
+        $data = request()->validate(Supply::rules());
+        $supply->update($data);
+        return redirect('supplies.index');
     }
 
     public function store()
     {
-        $data = request()->validate(Insumo::reglas());
-        DB::table('insumos')->insert($data);
-        return redirect('/insumos');
+        $data = request()->validate(Supply::rules());
+        DB::table('supplies')->insert($data);
+        return redirect('supplies.index');
     }
 
-    public function destroy(Insumo $insumo)
+    public function destroy(Supply $supply)
     {
-        $insumo->delete();
-        return redirect('/insumos');
+        $supply->delete();
+        return redirect('supplies.index');
     }
 }

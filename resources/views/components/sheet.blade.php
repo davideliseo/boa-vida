@@ -2,7 +2,7 @@
     @foreach ($encabezados as $key => $value)
         <div class="row row justify-content-center">
             <div class="col-md-6 text-md-right pb-4">
-                <strong>{{ $value['nombreCompleto'] }}:</strong>
+                <strong>{{ $value['displayName'] }}:</strong>
             </div>
 
             <div class="col-md-6 pb-4">

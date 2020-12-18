@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Venta;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class VentasController extends Controller
+class SaleController extends Controller
 {
     public function __construct()
     {
@@ -15,41 +15,41 @@ class VentasController extends Controller
 
     public function index()
     {
-        return view('ventas.index');
+        return view('sales.index');
     }
 
-    public function show(Venta $venta)
+    public function show(Sale $sale)
     {
-        return view('ventas.show', compact('venta'));
+        return view('sales.show', compact('sale'));
     }
 
     public function create()
     {
-        return view('ventas.create');
+        return view('sales.create');
     }
 
-    public function edit(Venta $venta)
+    public function edit(Sale $sale)
     {
-        return view('ventas.edit', compact('venta'));
+        return view('sales.edit', compact('sale'));
     }
 
-    public function update(Venta $venta)
+    public function update(Sale $sale)
     {
-        $data = request()->validate(Venta::reglas());
-        $venta->update($data);
-        return redirect('/ventas');
+        $data = request()->validate(Sale::rules());
+        $sale->update($data);
+        return redirect('sales.index');
     }
 
     public function store()
     {
-        $data = request()->validate(Venta::reglas());
-        DB::table('ventas')->insert($data);
-        return redirect('/ventas');
+        $data = request()->validate(Sale::rules());
+        DB::table('sales')->insert($data);
+        return redirect('sales.index');
     }
 
-    public function destroy(Venta $venta)
+    public function destroy(Sale $sale)
     {
-        $venta->delete();
-        return redirect('/ventas');
+        $sale->delete();
+        return redirect('sales.index');
     }
 }

@@ -4,7 +4,7 @@
             <tr>
                 @foreach ($encabezados as $key => $value)
                     <th scope="col" class="{{ $value['class'] ?? 'text-center' }}">
-                        {{ $value['nombreCompleto'] }}
+                        {{ $value['displayName'] }}
                     </th>
                 @endforeach
                 <th scope="col"></th>

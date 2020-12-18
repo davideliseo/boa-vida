@@ -5,38 +5,38 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Venta extends Model
+class Sale extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
     public static $indexables = [
-        'monto' => [
-            'nombreCompleto' => 'Monto',
-            'reglas' => ['required', 'numeric']
+        'amount' => [
+            'displayName' => 'Monto',
+            'rules' => ['required', 'numeric']
         ],
-        'nombre_cliente' => [
-            'nombreCompleto' => 'Nombre cliente',
+        'client_name' => [
+            'displayName' => 'Nombre cliente',
             'class' => 'text-left',
-            'reglas' => ['required']
+            'rules' => ['required']
         ],
-        'telefono_cliente' => [
-            'nombreCompleto' => 'Teléfono cliente',
+        'client_phone_number' => [
+            'displayName' => 'Teléfono cliente',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
     ];
 
-    public static function reglas()
+    public static function rules()
     {
         return array_map(function ($e) {
-            return $e['reglas'];
-        }, Venta::$indexables);
+            return $e['rules'];
+        }, Sale::$indexables);
     }
 
-    public function productos()
+    public function products()
     {
-        return $this->belongsToMany(Producto::class);
+        return $this->belongsToMany(Product::class);
     }
 }

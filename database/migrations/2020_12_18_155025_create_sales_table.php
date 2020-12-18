@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration
             $table->timestamps();
             $table->decimal('amount');
             $table->string('client_name');
-            $table->string('client_phone')->nullable();
+            $table->string('client_phone_number')->nullable();
         });
     }
 

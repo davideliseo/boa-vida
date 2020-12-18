@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Detalle extends Component
+class Sheet extends Component
 {
     public $encabezados;
     public $item;
@@ -21,6 +21,6 @@ class Detalle extends Component
 
     public function render()
     {
-        return view('components.detalle');
+        return view('components.sheet');
     }
 }

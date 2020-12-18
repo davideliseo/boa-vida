@@ -9,13 +9,13 @@
             @foreach ($encabezados as $key => $value)
                 <div class="form-group row">
                     <label for="{{ $key }}" class="col-md-4 col-form-label text-md-right">
-                        {{ $value['nombreCompleto'] }}
+                        {{ $value['displayName'] }}
                     </label>
 
                     <div class="col-md-6">
                         <input id="{{ $key }}" type="text" class="form-control @error($key) is-invalid @enderror"
                             name="{{ $key }}" value="{{ old($key) ?? ($item[$key] ?? null) }}"
-                            @if (in_array('required', $value['reglas']))
+                            @if (in_array('required', $value['rules']))
                                 required
                             @endif
                             autocomplete="{{ $key }}"

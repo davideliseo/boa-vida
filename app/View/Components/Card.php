@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Tarjeta extends Component
+class Card extends Component
 {
     public $ancho;
 
@@ -15,6 +15,6 @@ class Tarjeta extends Component
 
     public function render()
     {
-        return view('components.tarjeta');
+        return view('components.card');
     }
 }

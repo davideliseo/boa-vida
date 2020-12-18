@@ -5,7 +5,7 @@ namespace App\View\Components;
 use App\Models\Producto;
 use Illuminate\View\Component;
 
-class Tabla extends Component
+class Table extends Component
 {
     public $tabla;
     public $encabezados;
@@ -20,6 +20,6 @@ class Tabla extends Component
 
     public function render()
     {
-        return view('components.tabla');
+        return view('components.table');
     }
 }

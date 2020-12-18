@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proveedor;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ProveedoresController extends Controller
+class SupplierController extends Controller
 {
     public function __construct()
     {
@@ -15,41 +15,41 @@ class ProveedoresController extends Controller
 
     public function index()
     {
-        return view('proveedores.index');
+        return view('suppliers.index');
     }
 
-    public function show(Proveedor $proveedor)
+    public function show(Supplier $supplier)
     {
-        return view('proveedores.show', compact('proveedor'));
+        return view('suppliers.show', compact('supplier'));
     }
 
     public function create()
     {
-        return view('proveedores.create');
+        return view('suppliers.create');
     }
 
-    public function edit(Proveedor $proveedor)
+    public function edit(Supplier $supplier)
     {
-        return view('proveedores.edit', compact('proveedor'));
+        return view('suppliers.edit', compact('supplier'));
     }
 
-    public function update(Proveedor $proveedor)
+    public function update(Supplier $supplier)
     {
-        $data = request()->validate(Proveedor::reglas());
-        $proveedor->update($data);
-        return redirect('/proveedores');
+        $data = request()->validate(Supplier::rules());
+        $supplier->update($data);
+        return redirect('suppliers.index');
     }
 
     public function store()
     {
-        $data = request()->validate(Proveedor::reglas());
-        DB::table('proveedores')->insert($data);
-        return redirect('/proveedores');
+        $data = request()->validate(Supplier::rules());
+        DB::table('suppliers')->insert($data);
+        return redirect('suppliers.index');
     }
 
-    public function destroy(Proveedor $proveedor)
+    public function destroy(Supplier $supplier)
     {
-        $proveedor->delete();
-        return redirect('/proveedores');
+        $supplier->delete();
+        return redirect('suppliers.index');
     }
 }

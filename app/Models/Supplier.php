@@ -5,56 +5,56 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedor extends Model
+class Supplier extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
     public static $indexables = [
-        'nombre' => [
-            'nombreCompleto' => 'Nombre',
+        'name' => [
+            'displayName' => 'Nombre',
             'class' => 'text-left',
-            'reglas' => ['required']
+            'rules' => ['required']
         ],
         // TODO: validación RUT.
         'rut' => [
-            'nombreCompleto' => 'RUT',
+            'displayName' => 'RUT',
             'class' => 'text-left',
-            'reglas' => ['nullable', 'unique']
+            'rules' => ['nullable', 'unique']
         ],
-        'direccion' => [
-            'nombreCompleto' => 'Dirección',
+        'address' => [
+            'displayName' => 'Dirección',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
         'email' => [
-            'nombreCompleto' => 'E-mail',
+            'displayName' => 'E-mail',
             'class' => 'text-left',
-            'reglas' => ['nullable', 'email']
+            'rules' => ['nullable', 'email']
         ],
         // TODO: validación número de teléfono.
-        'telefono' => [
-            'nombreCompleto' => 'Teléfono',
+        'phone_number' => [
+            'displayName' => 'Teléfono',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
-        'nombre_contacto' => [
-            'nombreCompleto' => 'Nombre de contacto',
+        'contact_name' => [
+            'displayName' => 'Nombre de contacto',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
     ];
 
-    public static function reglas()
+    public static function rules()
     {
         return array_map(function ($e) {
-            return $e['reglas'];
-        }, Proveedor::$indexables);
+            return $e['rules'];
+        }, Supplier::$indexables);
     }
 
-    public function insumos()
+    public function supplies()
     {
-        return $this->hasMany(Insumo::class);
+        return $this->hasMany(Supply::class);
     }
 }

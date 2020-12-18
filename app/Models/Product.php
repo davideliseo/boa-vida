@@ -5,52 +5,52 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Producto extends Model
+class Product extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
     public static $indexables = [
-        'nombre' => [
-            'nombreCompleto' => 'Nombre',
+        'name' => [
+            'displayName' => 'Nombre',
             'class' => 'text-left',
-            'reglas' => ['required']
+            'rules' => ['required']
         ],
-        'precio' => [
-            'nombreCompleto' => 'Precio',
-            'reglas' => ['required', 'numeric']
+        'price' => [
+            'displayName' => 'Precio',
+            'rules' => ['required', 'numeric']
         ],
-        'cantidad' => [
-            'nombreCompleto' => 'Cantidad',
-            'reglas' => ['required', 'integer']
+        'quantity' => [
+            'displayName' => 'Cantidad',
+            'rules' => ['required', 'integer']
         ],
-        'fecha_elaboracion' => [
-            'nombreCompleto' => 'Fecha de elaboración',
+        'manufacturing_date' => [
+            'displayName' => 'Fecha de elaboración',
             'class' => 'text-left',
-            'reglas' => ['nullable', 'date']
+            'rules' => ['nullable', 'date']
         ],
-        'fecha_vencimiento' => [
-            'nombreCompleto' => 'Fecha de vencimiento',
+        'expiry_date' => [
+            'displayName' => 'Fecha de vencimiento',
             'class' => 'text-left',
-            'reglas' => ['nullable', 'date']
+            'rules' => ['nullable', 'date']
         ],
     ];
 
-    public static function reglas()
+    public static function rules()
     {
         return array_map(function ($e) {
-            return $e['reglas'];
-        }, Producto::$indexables);
+            return $e['rules'];
+        }, Product::$indexables);
     }
 
-    public function insumos()
+    public function supply()
     {
-        return $this->belongsToMany(Insumo::class);
+        return $this->belongsToMany(Supply::class);
     }
 
-    public function ventas()
+    public function sales()
     {
-        return $this->belongsToMany(Venta::class);
+        return $this->belongsToMany(Sale::class);
     }
 }
