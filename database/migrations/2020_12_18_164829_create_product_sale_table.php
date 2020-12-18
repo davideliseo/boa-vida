@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInsumoProductoTable extends Migration
+class CreateProductSaleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateInsumoProductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('insumo_producto', function (Blueprint $table) {
+        Schema::create('product_sale', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('insumo_id');
             $table->unsignedBigInteger('producto_id');
+            $table->unsignedBigInteger('venta_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateInsumoProductoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('insumo_producto');
+        Schema::dropIfExists('product_sale');
     }
 }
