@@ -11,7 +11,7 @@
     </div>
 @endsection
 
-@section('contenido')
+@section('content')
     <div class="container pt-5">
     <div class="row justify-content-center">
         <div class="col-md-7">

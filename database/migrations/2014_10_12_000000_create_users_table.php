@@ -24,12 +24,12 @@ class CreateUsersTable extends Migration
 
             // TODO: arreglar
             $table->string('rut')->nullable();
-            $table->string('direccion')->nullable();
-            $table->string('telefono')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone_number')->nullable();
 
             // TODO (david): confirmar si hay solo admin y usuario normal (bool) o hay más tipos de usuario (enum).
             // $table->enum('tipo', ['admin', 'vendedor', 'productor']);
-            $table->boolean('es_admin')->default(false);
+            $table->boolean('is_admin')->default(false);
         });
     }
 

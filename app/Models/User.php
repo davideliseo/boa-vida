@@ -43,36 +43,36 @@ class User extends Authenticatable
 
     public static $indexables = [
         'name' => [
-            'nombreCompleto' => 'Nombre',
+            'displayName' => 'Nombre',
             'class' => 'text-left',
-            'reglas' => ['required']
+            'rules' => ['required']
         ],
         'email' => [
-            'nombreCompleto' => 'E-mail',
+            'displayName' => 'E-mail',
             'class' => 'text-left',
-            'reglas' => ['required', 'email']
+            'rules' => ['required', 'email']
         ],
         'rut' => [
-            'nombreCompleto' => 'RUT',
+            'displayName' => 'RUT',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
-        'direccion' => [
-            'nombreCompleto' => 'Dirección',
+        'address' => [
+            'displayName' => 'Dirección',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
-        'telefono' => [
-            'nombreCompleto' => 'Teléfono',
+        'phone_number' => [
+            'displayName' => 'Teléfono',
             'class' => 'text-left',
-            'reglas' => ['nullable']
+            'rules' => ['nullable']
         ],
     ];
 
-    public static function reglas()
+    public static function rules()
     {
         return array_map(function ($e) {
-            return $e['reglas'];
+            return $e['rules'];
         }, User::$indexables);
     }
 }

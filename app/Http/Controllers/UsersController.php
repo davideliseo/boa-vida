@@ -15,27 +15,27 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('usuarios.index');
+        return view('users.index');
     }
 
     public function show(User $user)
     {
-        return view('usuarios.show', compact('user'));
+        return view('users.show', compact('user'));
     }
 
     public function create()
     {
-        return view('usuarios.create');
+        return view('users.create');
     }
 
     public function edit(User $user)
     {
-        return view('usuarios.edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     public function update(User $user)
     {
-        $data = request()->validate(User::reglas());
+        $data = request()->validate(User::rules());
         $user->update($data);
         return redirect('/usuarios');
     }
@@ -43,7 +43,7 @@ class UsersController extends Controller
     // TODO: reemplazar con registro de usuario.
     public function store()
     {
-        $data = request()->validate(User::reglas());
+        $data = request()->validate(User::rules());
         DB::table('users')->insert($data);
         return redirect('/usuarios');
     }
