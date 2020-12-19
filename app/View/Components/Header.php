@@ -6,17 +6,17 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    public $titulo;
-    public $btntipo;
-    public $btntexto;
-    public $btnruta;
+    public $title;
+    public $btntype;
+    public $btntext;
+    public $btnroute;
 
-    public function __construct($titulo, $btntipo, $btntexto, $btnruta)
+    public function __construct($title, $btntype, $btntext, $btnroute)
     {
-        $this->titulo = $titulo;
-        $this->btntipo = $btntipo;
-        $this->btntexto = $btntexto;
-        $this->btnruta = $btnruta;
+        $this->title = $title;
+        $this->btntype = $btntype;
+        $this->btntext = $btntext;
+        $this->btnroute = $btnroute;
     }
 
     public function render()

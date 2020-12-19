@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <x-header titulo="Registrarse" btntipo="btn-dark" btntexto="Atrás" btnruta="login" />
+                    <x-header title="Registrarse" btntype="btn-dark" btntext="Atrás" btnroute="login" />
                 </div>
 
                 <div class="card-body">

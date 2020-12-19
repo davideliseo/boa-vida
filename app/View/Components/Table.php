@@ -7,15 +7,15 @@ use Illuminate\View\Component;
 
 class Table extends Component
 {
-    public $tabla;
-    public $encabezados;
-    public $coleccion;
+    public $table;
+    public $headers;
+    public $collection;
 
-    public function __construct($tabla, $encabezados, $coleccion)
+    public function __construct($table, $headers, $collection)
     {
-        $this->tabla = $tabla;
-        $this->encabezados = $encabezados;
-        $this->coleccion = $coleccion;
+        $this->table = $table;
+        $this->headers = $headers;
+        $this->collection = $collection;
     }
 
     public function render()

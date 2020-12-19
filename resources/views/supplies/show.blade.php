@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('card-header')
-    <x-header titulo="Ficha de insumo" btntipo="btn-dark" btntexto="Atrás" btnruta="supplies.index" />
+    <x-header title="Ficha de insumo" btntype="btn-dark" btntext="Atrás" btnroute="supplies.index" />
 @endsection
 
 @section('card-body')
-    <x-sheet :item="$supply" :encabezados="\App\Models\Supply::$indexables" btntexto="Editar" tabla="supplies" />
+    <x-sheet :item="$supply" :headers="\App\Models\Supply::$indexables" btntext="Editar" table="supplies" />
 @endsection
 
 @section('content')
-    <x-card ancho="8" />
+    <x-card width="8" />
 @endsection

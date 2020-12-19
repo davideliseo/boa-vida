@@ -1,12 +1,12 @@
 <div>
     @if($item == null)
-        <form method="post" action="{{ route($ruta) }}">
+        <form method="post" action="{{ route($route) }}">
     @else
-        <form method="post" action="{{ route($ruta, $item) }}">
+        <form method="post" action="{{ route($route, $item) }}">
             @method('PATCH')
     @endif
             @csrf
-            @foreach ($encabezados as $key => $value)
+            @foreach ($headers as $key => $value)
                 <div class="form-group row">
                     <label for="{{ $key }}" class="col-md-4 col-form-label text-md-right">
                         {{ $value['displayName'] }}
@@ -37,7 +37,7 @@
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-5">
                     <button type="submit" class="btn btn-primary">
-                        {{ $btntexto }}
+                        {{ $btntext }}
                     </button>
                 </div>
             </div>

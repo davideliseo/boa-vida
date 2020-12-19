@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('card-header')
-    <x-header titulo="Agregar producto" btntipo="btn-dark" btntexto="Atrás" btnruta="products.index" />
+    <x-header title="Agregar producto" btntype="btn-dark" btntext="Atrás" btnroute="products.index" />
 @endsection
 
 @section('card-body')
-    <x-form ruta="products.store" btntexto="Agregar" :encabezados="\App\Models\Product::$indexables" :item="null" />
+    <x-form route="products.store" btntext="Agregar" :headers="\App\Models\Product::$indexables" :item="null" />
 @endsection
 
 @section('content')
-    <x-card ancho="8" />
+    <x-card width="8" />
 @endsection

@@ -6,17 +6,17 @@ use Illuminate\View\Component;
 
 class Form extends Component
 {
-    public $ruta;
-    public $encabezados;
+    public $route;
+    public $headers;
     public $item;
-    public $btntexto;
+    public $btntext;
 
-    public function __construct($ruta, $encabezados, $item, $btntexto)
+    public function __construct($route, $headers, $item, $btntext)
     {
-        $this->ruta = $ruta;
-        $this->encabezados = $encabezados;
+        $this->route = $route;
+        $this->headers = $headers;
         $this->item = $item;
-        $this->btntexto = $btntexto;
+        $this->btntext = $btntext;
     }
 
     public function render()

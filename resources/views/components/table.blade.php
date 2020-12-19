@@ -2,7 +2,7 @@
     <table class="table">
         <thead>
             <tr>
-                @foreach ($encabezados as $key => $value)
+                @foreach ($headers as $key => $value)
                     <th scope="col" class="{{ $value['class'] ?? 'text-center' }}">
                         {{ $value['displayName'] }}
                     </th>
@@ -11,12 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($coleccion as $item)
+            @foreach ($collection as $item)
                 <tr>
-                    @foreach ($encabezados as $key => $value)
+                    @foreach ($headers as $key => $value)
                         <td scope="col" class="{{ $value['class'] ?? 'text-center' }}">
                             @if ($loop->first)
-                                <a href="{{ route($tabla . '.show', $item) }}">{{ $item[$key] }}</a>
+                                <a href="{{ route($table . '.show', $item) }}">{{ $item[$key] }}</a>
                             @else
                                 {{ $item[$key] }}
                             @endif
@@ -26,12 +26,12 @@
                     <td>
                         <div class="d-flex align-items-center">
                             <div class="pr-2">
-                                <a class="btn-v2 btn-deg-orange shadow-sm" href="{{ route($tabla . '.edit', $item) }}">
+                                <a class="btn-v2 btn-deg-orange shadow-sm" href="{{ route($table . '.edit', $item) }}">
                                     Editar
                                 </a>
                             </div>
 
-                            <form method="POST" action="{{ route($tabla . '.destroy', $item) }}">
+                            <form method="POST" action="{{ route($table . '.destroy', $item) }}">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn-v2 btn-deg-red shadow-sm"

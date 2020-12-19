@@ -6,11 +6,11 @@ use Illuminate\View\Component;
 
 class Card extends Component
 {
-    public $ancho;
+    public $width;
 
-    public function __construct($ancho)
+    public function __construct($width)
     {
-        $this->ancho = $ancho;
+        $this->width = $width;
     }
 
     public function render()

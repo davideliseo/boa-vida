@@ -6,17 +6,17 @@ use Illuminate\View\Component;
 
 class Sheet extends Component
 {
-    public $encabezados;
+    public $headers;
     public $item;
-    public $btntexto;
-    public $tabla;
+    public $btntext;
+    public $table;
 
-    public function __construct($encabezados, $item, $btntexto, $tabla)
+    public function __construct($headers, $item, $btntext, $table)
     {
-        $this->encabezados = $encabezados;
+        $this->headers = $headers;
         $this->item = $item;
-        $this->btntexto = $btntexto;
-        $this->tabla = $tabla;
+        $this->btntext = $btntext;
+        $this->table = $table;
     }
 
     public function render()

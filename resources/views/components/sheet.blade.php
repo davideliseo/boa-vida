@@ -1,5 +1,5 @@
 <div>
-    @foreach ($encabezados as $key => $value)
+    @foreach ($headers as $key => $value)
         <div class="row row justify-content-center">
             <div class="col-md-6 text-md-right pb-4">
                 <strong>{{ $value['displayName'] }}:</strong>
@@ -12,13 +12,13 @@
     @endforeach
     <div class="row justify-content-center">
             <div class="col-md-6 text-md-right pr-2 pt-2">
-                <a class="btn btn-warning" href="{{ route($tabla.'.edit', $item) }}">
+                <a class="btn btn-warning" href="{{ route($table.'.edit', $item) }}">
                     Editar
                 </a>
             </div>
 
             <div class="col-md-6 pt-2">
-                <form method="POST" action="{{ route($tabla.'.destroy', $item) }}">
+                <form method="POST" action="{{ route($table.'.destroy', $item) }}">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger"

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('card-header')
-    <x-header titulo="Ficha de usuario" btntipo="btn-dark" btntexto="Atrás" btnruta="users.index" />
+    <x-header title="Ficha de usuario" btntype="btn-dark" btntext="Atrás" btnroute="users.index" />
 @endsection
 
 @section('card-body')
-    <x-sheet :item="$user" :encabezados="\App\Models\User::$indexables" btntexto="Editar" tabla="users" />
+    <x-sheet :item="$user" :headers="\App\Models\User::$indexables" btntext="Editar" table="users" />
 @endsection
 
 @section('content')
-    <x-card ancho="8" />
+    <x-card width="8" />
 @endsection
