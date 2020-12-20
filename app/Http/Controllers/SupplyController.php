@@ -37,19 +37,19 @@ class SupplyController extends Controller
     {
         $data = request()->validate(Supply::rules());
         $supply->update($data);
-        return redirect('supplies.index');
+        return redirect()->route('supplies.index');
     }
 
     public function store()
     {
         $data = request()->validate(Supply::rules());
         DB::table('supplies')->insert($data);
-        return redirect('supplies.index');
+        return redirect()->route('supplies.index');
     }
 
     public function destroy(Supply $supply)
     {
         $supply->delete();
-        return redirect('supplies.index');
+        return redirect()->route('supplies.index');
     }
 }

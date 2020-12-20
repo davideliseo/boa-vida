@@ -37,7 +37,7 @@ class UsersController extends Controller
     {
         $data = request()->validate(User::rules());
         $user->update($data);
-        return redirect('/usuarios');
+        return redirect()->route('users.index');
     }
 
     // TODO: reemplazar con registro de usuario.
@@ -45,12 +45,12 @@ class UsersController extends Controller
     {
         $data = request()->validate(User::rules());
         DB::table('users')->insert($data);
-        return redirect('/usuarios');
+        return redirect()->route('users.index');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect('/usuarios');
+        return redirect()->route('users.index');
     }
 }

@@ -37,19 +37,19 @@ class ProductController extends Controller
     {
         $data = request()->validate(Product::rules());
         $product->update($data);
-        return redirect('products.index');
+        return redirect()->route('products.index');
     }
 
     public function store()
     {
         $data = request()->validate(Product::rules());
         DB::table('products')->insert($data);
-        return redirect('products.index');
+        return redirect()->route('products.index');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect('products.index');
+        return redirect()->route('products.index');
     }
 }

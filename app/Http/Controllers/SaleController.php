@@ -37,19 +37,19 @@ class SaleController extends Controller
     {
         $data = request()->validate(Sale::rules());
         $sale->update($data);
-        return redirect('sales.index');
+        return redirect()->route('sales.index');
     }
 
     public function store()
     {
         $data = request()->validate(Sale::rules());
         DB::table('sales')->insert($data);
-        return redirect('sales.index');
+        return redirect()->route('sales.index');
     }
 
     public function destroy(Sale $sale)
     {
         $sale->delete();
-        return redirect('sales.index');
+        return redirect()->route('sales.index');
     }
 }
