@@ -69,10 +69,23 @@ class User extends Authenticatable
         ],
     ];
 
+    public function hasRole($role)
+    {
+        return $this->roles()->where('roles.name', $role)->exists();
+    }
+
     public static function rules()
     {
         return array_map(function ($e) {
             return $e['rules'];
         }, User::$indexables);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)
+            ->using(RoleUser::class)
+            ->withPivot('permissions')
+            ->withTimestamps();
     }
 }

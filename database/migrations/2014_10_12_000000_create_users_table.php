@@ -20,16 +20,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
 
             // TODO: arreglar
-            $table->string('rut')->nullable();
+            $table->string('rut')->unique()->nullable();
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
 
-            // TODO (david): confirmar si hay solo admin y usuario normal (bool) o hay más tipos de usuario (enum).
-            // $table->enum('tipo', ['admin', 'vendedor', 'productor']);
-            $table->boolean('is_admin')->default(false);
+            // TODO: mover timestamps al final.
+            $table->timestamps();
         });
     }
 
