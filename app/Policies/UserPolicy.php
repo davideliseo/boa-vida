@@ -17,7 +17,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->anyRole('admin', 'users');
     }
 
     /**
@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        //
+        return $user->anyRole('admin', 'users');
     }
 
     /**
@@ -40,7 +40,9 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        //
+        // Solo los administradores y encargados de usuarios pueden crear
+        // nuevos usuarios.
+        return $user->anyRole('admin', 'users');
     }
 
     /**
@@ -52,7 +54,9 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        // TODO: (david) confirmar si cualquier administrador o encargado de
+        // usuarios puede editar los atributos de los usuarios.
+        return $user->anyRole('admin', 'users');
     }
 
     /**
@@ -64,7 +68,16 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        //
+        // Criterios:
+        // - El usuario debe ser administrador o ser encargado de usuarios.
+        // - El usuario no puede eliminarse a sí mismo.
+        // - Nadie puede eliminar administradores, excepto el propietario.
+        // - Un encargado de usuario no puede eliminar a otro encargado de su
+        //   misma área.
+        return ($user->anyRole('admin', 'users')
+            && ($user->id != $model->id)
+            && User::areNotPeers('users', $user, $model))
+            || ($model->hasRole('admin') && $user->hasRole('owner'));
     }
 
     /**
@@ -76,7 +89,7 @@ class UserPolicy
      */
     public function restore(User $user, User $model)
     {
-        //
+         return $user->anyRole('admin', 'users');
     }
 
     /**
@@ -88,6 +101,6 @@ class UserPolicy
      */
     public function forceDelete(User $user, User $model)
     {
-        //
+        return $user->anyRole('admin', 'users');
     }
 }
