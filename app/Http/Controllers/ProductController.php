@@ -4,49 +4,85 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('products.index');
     }
 
-    public function show(Product $product)
-    {
-        return view('products.show', compact('producto'));
-    }
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('products.create');
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // TODO: refactor.
+        $data = $request->validate(Product::rules());
+        Product::create($data);
+        return redirect()->route('products.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Product $product)
+    {
+        return view('products.show', compact('producto'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Product $product)
     {
         return view('products.edit', compact('producto'));
     }
 
-    public function update(Product $product)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Product $product)
     {
-        $data = request()->validate(Product::rules());
+        $data = $request->validate(Product::rules());
         $product->update($data);
         return redirect()->route('products.index');
     }
 
-    public function store()
-    {
-        $data = request()->validate(Product::rules());
-        DB::table('products')->insert($data);
-        return redirect()->route('products.index');
-    }
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Product $product)
     {
         $product->delete();

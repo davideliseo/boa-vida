@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sale;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class SaleController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +14,18 @@ class SaleController extends Controller
      */
     public function index()
     {
-        return view('sales.index');
+        return view('users.index');
     }
 
     /**
+     * TODO: (david) reemplazar con registro de usuario.
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('sales.create');
+        return view('users.create');
     }
 
     /**
@@ -35,56 +36,56 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate(Sale::rules());
-        Sale::create($data);
-        return redirect()->route('sales.index');
+        $data = $request->validate(User::rules());
+        User::create($data);
+        return redirect()->route('users.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sale  $sale
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Sale $sale)
+    public function show(User $user)
     {
-        return view('sales.show', compact('sale'));
+        return view('users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sale  $sale
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sale $sale)
+    public function edit(User $user)
     {
-        return view('sales.edit', compact('sale'));
+        return view('users.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sale  $sale
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sale $sale)
+    public function update(Request $request, User $user)
     {
-        $data = $request->validate(Sale::rules());
-        $sale->update($data);
-        return redirect()->route('sales.index');
+        $data = $request->validate(User::rules());
+        $user->update($data);
+        return redirect()->route('users.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sale  $sale
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sale $sale)
+    public function destroy(User $user)
     {
-        $sale->delete();
-        return redirect()->route('sales.index');
+        $user->delete();
+        return redirect()->route('users.index');
     }
 }
