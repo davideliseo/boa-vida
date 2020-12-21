@@ -15,43 +15,29 @@ class Supplier extends Model
         'name' => [
             'displayName' => 'Nombre',
             'class' => 'text-left',
-            'rules' => ['required']
         ],
-        // TODO: validación RUT.
         'rut' => [
             'displayName' => 'RUT',
             'class' => 'text-left',
-            'rules' => ['nullable', 'unique']
         ],
         'address' => [
             'displayName' => 'Dirección',
             'class' => 'text-left',
-            'rules' => ['nullable']
         ],
         'email' => [
             'displayName' => 'E-mail',
             'class' => 'text-left',
             'rules' => ['nullable', 'email']
         ],
-        // TODO: validación número de teléfono.
         'phone_number' => [
             'displayName' => 'Teléfono',
             'class' => 'text-left',
-            'rules' => ['nullable']
         ],
         'contact_name' => [
             'displayName' => 'Nombre de contacto',
             'class' => 'text-left',
-            'rules' => ['nullable']
         ],
     ];
-
-    public static function rules()
-    {
-        return array_map(function ($e) {
-            return $e['rules'];
-        }, Supplier::$indexables);
-    }
 
     public function supplies()
     {

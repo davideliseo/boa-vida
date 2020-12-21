@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/inicio';
+    public const HOME = '/home';
 
     /**
      * The controller namespace for the application.
@@ -35,11 +35,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::resourceVerbs([
-            'create' => 'agregar',
-            'edit' => 'editar',
-        ]);
-
         $this->configureRateLimiting();
 
         $this->routes(function () {

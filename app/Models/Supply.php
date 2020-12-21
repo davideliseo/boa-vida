@@ -15,34 +15,22 @@ class Supply extends Model
         'name' => [
             'displayName' => 'Nombre',
             'class' => 'text-left',
-            'rules' => ['required']
         ],
         'price' => [
             'displayName' => 'Precio',
-            'rules' => ['required', 'numeric']
         ],
         'quantity' => [
             'displayName' => 'Cantidad',
-            'rules' => ['required', 'integer']
         ],
         'expiry_date' => [
             'displayName' => 'Fecha de vencimiento',
             'class' => 'text-left',
-            'rules' => ['nullable', 'date']
         ],
         'purchase_date' => [
             'displayName' => 'Fecha de compra',
             'class' => 'text-left',
-            'rules' => ['nullable', 'date']
         ]
     ];
-
-    public static function rules()
-    {
-        return array_map(function ($e) {
-            return $e['rules'];
-        }, Supply::$indexables);
-    }
 
     public function supplier()
     {

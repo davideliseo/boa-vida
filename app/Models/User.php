@@ -74,11 +74,31 @@ class User extends Authenticatable
         return $this->roles()->where('roles.name', $role)->exists();
     }
 
-    public static function rules()
+    public function doesNotHaveRole($role)
     {
-        return array_map(function ($e) {
-            return $e['rules'];
-        }, User::$indexables);
+        return !$this->hasRole($role);
+    }
+
+    public function anyRole(...$roles)
+    {
+        foreach ($roles as $role) {
+            if ($this->roles()->where('roles.name', $role)->exists()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function everyRole(...$roles)
+    {
+        foreach ($roles as $role) {
+            if ($this->roles()->where('roles.name', $role)->exists()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function roles()
@@ -87,5 +107,14 @@ class User extends Authenticatable
             ->using(RoleUser::class)
             ->withPivot('permissions')
             ->withTimestamps();
+    }
+
+    public static function arePeers($role, User $a, User $b)
+    {
+        return $a->hasRole($role) && $b->hasRole($role);
+    }
+    public static function areNotPeers($role, User $a, User $b)
+    {
+        return !User::arePeers($role, $a, $b);
     }
 }

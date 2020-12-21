@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SupplierRequest;
 use App\Models\Supplier;
-use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
@@ -43,9 +43,9 @@ class SupplierController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
-        $data = $request->validate(Supplier::rules());
+        $data = $request->validated();
         Supplier::create($data);
         return redirect()->route('suppliers.index');
     }
@@ -79,9 +79,9 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Supplier $supplier)
+    public function update(SupplierRequest $request, Supplier $supplier)
     {
-        $data = $request->validate(Supplier::rules());
+        $data = $request->validated();
         $supplier->update($data);
         return redirect()->route('suppliers.index');
     }

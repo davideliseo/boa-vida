@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaleRequest;
 use App\Models\Sale;
-use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
@@ -43,9 +43,9 @@ class SaleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaleRequest $request)
     {
-        $data = $request->validate(Sale::rules());
+        $data = $request->validated();
         Sale::create($data);
         return redirect()->route('sales.index');
     }
@@ -79,9 +79,9 @@ class SaleController extends Controller
      * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sale $sale)
+    public function update(SaleRequest $request, Sale $sale)
     {
-        $data = $request->validate(Sale::rules());
+        $data = $request->validated();
         $sale->update($data);
         return redirect()->route('sales.index');
     }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SupplyRequest;
 use App\Models\Supply;
-use Illuminate\Http\Request;
 
 class SupplyController extends Controller
 {
@@ -43,9 +43,9 @@ class SupplyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SupplyRequest $request)
     {
-        $data = $request->validate(Supply::rules());
+        $data = $request->validated();
         Supply::create($data);
         return redirect()->route('supplies.index');
     }
@@ -79,9 +79,9 @@ class SupplyController extends Controller
      * @param  \App\Models\Supply  $supply
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Supply $supply)
+    public function update(SupplyRequest $request, Supply $supply)
     {
-        $data = $request->validate(Supply::rules());
+        $data = $request->validated();
         $supply->update($data);
         return redirect()->route('supplies.index');
     }

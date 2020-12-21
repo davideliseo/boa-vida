@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,26 +15,20 @@ class Sale extends Model
     public static $indexables = [
         'amount' => [
             'displayName' => 'Monto',
-            'rules' => ['required', 'numeric']
+        ],
+        // TODO: corregir validación
+        'status' => [
+            'displayName' => 'Estado',
         ],
         'client_name' => [
             'displayName' => 'Nombre cliente',
             'class' => 'text-left',
-            'rules' => ['required']
         ],
         'client_phone_number' => [
             'displayName' => 'Teléfono cliente',
             'class' => 'text-left',
-            'rules' => ['nullable']
         ],
     ];
-
-    public static function rules()
-    {
-        return array_map(function ($e) {
-            return $e['rules'];
-        }, Sale::$indexables);
-    }
 
     public function products()
     {
