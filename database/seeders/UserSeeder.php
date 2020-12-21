@@ -30,6 +30,12 @@ class UserSeeder extends Seeder
             'password' => Hash::make(12341234),
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'Encargado de producción 2',
+            'email' => 'test4@test.com',
+            'password' => Hash::make(12341234),
+        ]);
+
         $user = User::find(1);
         $user->roles()->sync([
             1 => ['permissions' => Permissions::$all],
@@ -44,6 +50,11 @@ class UserSeeder extends Seeder
         $user = User::find(3);
         $user->roles()->sync([
             2 => ['permissions' => Permissions::$all]
+        ]);
+
+        $user = User::find(4);
+        $user->roles()->sync([
+            6 => ['permissions' => Permissions::$all]
         ]);
     }
 }

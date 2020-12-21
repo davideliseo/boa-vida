@@ -6,7 +6,7 @@
 
 @section('card-body')
     <x-form route="products.update" btntext="Editar" :headers="\App\Models\Product::$indexables"
-        :item="$producto" />
+        :item="$product" />
 @endsection
 
 @section('content')

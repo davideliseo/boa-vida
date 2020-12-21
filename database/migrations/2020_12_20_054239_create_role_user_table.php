@@ -20,7 +20,7 @@ class CreateRoleUserTable extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_id');
             $table->json('permissions')
-                ->default(json_encode(Permissions::$default));
+                ->default(json_encode(Permissions::$all));
 
             $table->timestamps();
         });

@@ -5,7 +5,7 @@
 @endsection
 
 @section('card-body')
-    <x-sheet :item="$producto" :headers="\App\Models\Product::$indexables" btntext="Editar" table="products" />
+    <x-sheet :item="$product" :headers="\App\Models\Product::$indexables" btntext="Editar" table="products" />
 @endsection
 
 @section('content')

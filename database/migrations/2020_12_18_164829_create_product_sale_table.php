@@ -15,8 +15,8 @@ class CreateProductSaleTable extends Migration
     {
         Schema::create('product_sale', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('producto_id');
-            $table->unsignedBigInteger('venta_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('sale_id');
             $table->timestamps();
         });
     }
