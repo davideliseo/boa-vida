@@ -11032,10 +11032,16 @@ body {
     background-image: linear-gradient(160deg, #f37a65 0%, #f37a6500 100%);
 }
 
-.btn-deg-orange {
+.btn-deg-orange-1 {
     color: #fff;
     background-color: #fd8e44;
     background-image: linear-gradient(160deg, #ffb463 0%, #f37a6500 100%);
+}
+
+.btn-deg-orange-2 {
+    color: #fff;
+    background-color: #fe8c10;
+    background-image: linear-gradient(160deg, #f9c70f 0%, #f37a6500 100%);
 }
 
 .btn-deg-green-1 {
@@ -11048,6 +11054,30 @@ body {
     color: #fff;
     background-color: #76b88c;
     background-image: linear-gradient(160deg, #b8db55 0%, #f37a6500 100%);
+}
+
+.btn-deg-darkest-blue {
+    color: #fff;
+    background-color: #0e074b;
+    background-image: linear-gradient(160deg, #110a66 0%, #f37a6500 100%);
+}
+
+.btn-deg-gray {
+    color: #fff;
+    background-color: #7b9ca5;
+    background-image: linear-gradient(160deg, #91a6ae 0%, #f37a6500 100%);
+}
+
+.btn-deg-dark-gray {
+    color: #fff;
+    background-color: #527681;
+    background-image: linear-gradient(160deg, #6c919a 0%, #f37a6500 100%);
+}
+
+.btn-deg-dark {
+    color: #fff;
+    background-color: #343a40;
+    background-image: linear-gradient(160deg, #56606b 0%, #f37a6500 100%);
 }
 
 /* .btn-vue-green {
