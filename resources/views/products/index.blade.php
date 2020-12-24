@@ -1,23 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-card.index title="Productos" resource="products" collection-name="productos" :collection="$collection" :model="App\Models\Product::class">
+    <x-card.index title="Productos" resource="products" :model="App\Models\Product::class" :collection="$collection">
         <x-slot name="table">
             <x-slot name="headers">
-                <th scope="col" class="text-left"> {{ __('Nombre') }} </th>
-                <th scope="col" class="text-left"> {{ __('Cantidad') }} </th>
-                <th scope="col" class="text-left"> {{ __('Precio') }} </th>
-                <th scope="col" class="text-left"> {{ __('Fecha de elaboración') }} </th>
-                <th scope="col" class="text-left"> {{ __('Fecha de vencimiento') }} </th>
+                @foreach (config("resources.products.fields") as $key => $value)
+                    @if ($value['is-indexable'])
+                        <x-table.header resource="products" :key="$key" />
+                    @endif
+                @endforeach
             </x-slot>
             <x-slot name="rows">
                 @foreach ($collection as $product)
                     <tr>
-                        <td scope="col" class="text-left"> {{ $product->name }} </td>
-                        <td scope="col" class="text-left"> {{ $product->quantity }} </td>
-                        <td scope="col" class="text-left"> {{ $product->price }} </td>
-                        <td scope="col" class="text-left"> {{ $product->manufacturing_date }} </td>
-                        <td scope="col" class="text-left"> {{ $product->expiry_date }} </td>
+                        <x-table.cell resource="products" key="name"               :item="$product" />
+                        <x-table.cell resource="products" key="quantity"           :item="$product" />
+                        <x-table.cell resource="products" key="price"              :item="$product" />
+                        <x-table.cell resource="products" key="manufacturing_date" :item="$product" />
+                        <x-table.cell resource="products" key="expiry_date"        :item="$product" />
                         <td>
                             <x-table.row.actions resource="products" :item="$product" />
                         </td>

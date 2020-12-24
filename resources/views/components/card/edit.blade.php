@@ -1,3 +1,5 @@
+@props(['title', 'resource', 'item'])
+
 <x-card.base type="form-like" :title="$title">
     <x-slot name="header">
         <x-button.back :resource="$resource" :show-text="true" />

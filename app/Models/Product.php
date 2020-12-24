@@ -11,27 +11,6 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public static $indexables = [
-        'name' => [
-            'displayName' => 'Nombre',
-            'class' => 'text-left',
-        ],
-        'price' => [
-            'displayName' => 'Precio',
-        ],
-        'quantity' => [
-            'displayName' => 'Cantidad',
-        ],
-        'manufacturing_date' => [
-            'displayName' => 'Fecha de elaboración',
-            'class' => 'text-left',
-        ],
-        'expiry_date' => [
-            'displayName' => 'Fecha de vencimiento',
-            'class' => 'text-left',
-        ],
-    ];
-
     public function supply()
     {
         return $this->belongsToMany(Supply::class);

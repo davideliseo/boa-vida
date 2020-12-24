@@ -9,7 +9,12 @@
     @elseif ($inputType == "fake")
         <div class="col-md-6 col-form-label fake-input">
             <div class="d-flex align-items-center">
-                {{ $value ?? '' }}
+                @if ($item)
+                    {{ $item[$key] }}
+                @else
+                    {{ $value ?? ''}}
+                @endif
+
             </div>
         </div>
     @elseif ($inputType == "date")

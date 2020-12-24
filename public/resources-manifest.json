@@ -1,0 +1,63 @@
+{
+  "products": {
+    "model": "App\\Models\\Product::class",
+    "fields": {
+      "id": {
+        "label": "ID",
+        "icon": "qr_code",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      },
+      "name": {
+        "label": "Nombre",
+        "icon": "font_download",
+        "text-align": "left",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "quantity": {
+        "label": "Cantidad",
+        "icon": "workspaces",
+        "text-align": "center",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "price": {
+        "label": "Precio",
+        "icon": "attach_money",
+        "text-align": "center",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "manufacturing_date": {
+        "label": "Fecha de elaboración",
+        "icon": "event_available",
+        "text-align": "left",
+        "is-indexable": true,
+        "is-required": false
+      },
+      "expiry_date": {
+        "label": "Fecha de vencimiento",
+        "icon": "event_busy",
+        "text-align": "left",
+        "is-indexable": true,
+        "is-required": false
+      },
+      "created_at": {
+        "label": "Fecha de creación",
+        "icon": "more_time",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      },
+      "updated_at": {
+        "label": "Fecha de modificación",
+        "icon": "update",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      }
+    }
+  }
+}
