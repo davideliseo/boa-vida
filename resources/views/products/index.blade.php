@@ -4,11 +4,11 @@
     <x-card.index title="Productos" resource="products" :model="App\Models\Product::class" :collection="$collection">
         <x-slot name="table">
             <x-slot name="headers">
-                @foreach (config("resources.products.fields") as $key => $value)
-                    @if ($value['is-indexable'])
-                        <x-table.header resource="products" :key="$key" />
-                    @endif
-                @endforeach
+                    <x-table.header resource="products" key="name"  />
+                    <x-table.header resource="products" key="quantity" />
+                    <x-table.header resource="products" key="price" />
+                    <x-table.header resource="products" key="manufacturing_date" />
+                    <x-table.header resource="products" key="expiry_date" />
             </x-slot>
             <x-slot name="rows">
                 @foreach ($collection as $product)

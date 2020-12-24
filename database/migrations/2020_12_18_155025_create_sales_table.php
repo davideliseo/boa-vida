@@ -15,11 +15,11 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->decimal('amount');
             $table->enum('status', ['pending', 'completed', 'failed']);
             $table->string('client_name');
             $table->string('client_phone_number')->nullable();
+            $table->timestamps();
         });
     }
 

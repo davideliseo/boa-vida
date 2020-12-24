@@ -59,5 +59,59 @@
         "is-required": null
       }
     }
+  },
+  "sales": {
+    "model": "App\\Models\\Sale::class",
+    "fields": {
+      "id": {
+        "label": "ID",
+        "icon": "qr_code",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      },
+      "amount": {
+        "label": "Monto",
+        "icon": "info",
+        "text-align": "center",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "status": {
+        "label": "Estado",
+        "icon": "info",
+        "text-align": "center",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "client_name": {
+        "label": "Nombre del cliente",
+        "icon": "info",
+        "text-align": "left",
+        "is-indexable": true,
+        "is-required": true
+      },
+      "client_phone_number": {
+        "label": "Teléfono del cliente",
+        "icon": "info",
+        "text-align": "center",
+        "is-indexable": true,
+        "is-required": false
+      },
+      "created_at": {
+        "label": "Fecha de creación",
+        "icon": "more_time",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      },
+      "updated_at": {
+        "label": "Fecha de modificación",
+        "icon": "update",
+        "text-align": "left",
+        "is-indexable": false,
+        "is-required": null
+      }
+    }
   }
 }
