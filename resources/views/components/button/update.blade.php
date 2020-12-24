@@ -1,3 +1,5 @@
+@props(['resource', 'showText' => true])
+
 <x-button.base
     action="update"
     label="Editar"

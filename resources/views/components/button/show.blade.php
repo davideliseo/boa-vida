@@ -1,3 +1,5 @@
+@props(['item', 'resource', 'showText' => true])
+
 <x-button.base
     action="show"
     label="Detalle"

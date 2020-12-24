@@ -1,15 +1,17 @@
-@props(['label', 'icon', 'key', 'item', 'leading' => ''])
+@props(['inputType' => 'fake', 'label', 'icon', 'key', 'item'])
 
-<x-form.row
+<x-form.row.base
     type="show"
+    :input-type="$inputType"
     :label="$label"
     :icon="$icon"
     :key="$key"
     :item="null"
-    :input="false"
-    :required="null"
-    :leading="$leading">
+    :is-input="false"
+    :is-required="null">
+
     <x-slot name="value">
         {{ $value }}
     </x-slot>
-</x-form.row>
+
+</x-form.row.base>

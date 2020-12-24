@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class Input extends Component
 {
-    public $required;
+    public $isRequired;
     public $key;
     public $item;
 
@@ -15,9 +15,9 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($required, $key, $item = null)
+    public function __construct($isRequired, $key, $item = null)
     {
-        $this->required = $required;
+        $this->isRequired = $isRequired;
         $this->key = $key;
         $this->item = $item;
     }

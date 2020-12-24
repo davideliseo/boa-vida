@@ -1,3 +1,5 @@
+@props(['resource', 'showText' => true])
+
 <x-button.base
     action="create"
     label="Agregar"

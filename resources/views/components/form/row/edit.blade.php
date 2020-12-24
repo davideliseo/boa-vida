@@ -1,12 +1,11 @@
-@props(['label', 'icon', 'key', 'item', 'required' => false])
+@props(['inputType' => 'text', 'label', 'icon', 'key', 'item', 'isRequired' => false])
 
-<x-form.row
+<x-form.row.base
     type="edit"
+    :input-type="$inputType"
     :label="$label"
     :icon="$icon"
     :key="$key"
     :item="$item"
-    :input="true"
-    :required="$required"
-    :leading="null">
-</x-form.row>
+    :is-input="true"
+    :is-required="$isRequired" />

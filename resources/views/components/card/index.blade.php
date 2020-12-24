@@ -1,7 +1,7 @@
-<x-card type="index" :title="$title">
+<x-card.base type="index" :title="$title">
     <x-slot name="header">
         @can('create', $model)
-            <x-button type="create" :resource="$resource" />
+            <x-button.create :resource="$resource" />
         @endcan
     </x-slot>
     <x-slot name="body">
@@ -18,4 +18,4 @@
     <x-slot name="footer">
         {{ __("Total ${collectionName}") }}: {{ $collection->count() }}
     </x-slot>
-</x-card>
+</x-card.base>

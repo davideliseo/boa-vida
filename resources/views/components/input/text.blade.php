@@ -1,7 +1,7 @@
 <div>
     <input id="{{ $key }}" type="text" class="form-control @error($key) is-invalid @enderror"
         name="{{ $key }}" value="{{ old($key) ?? ($item[$key] ?? null) }}"
-        @if ($required) required @endif
+        @if ($isRequired) required @endif
         autocomplete="{{ $key }}" autofocus>
 
         @error($key)
