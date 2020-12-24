@@ -6,20 +6,20 @@ use Illuminate\View\Component;
 
 class Input extends Component
 {
+    public $required;
     public $key;
-    public $value;
-    public $isRequired;
+    public $item;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($key, $value, $isRequired)
+    public function __construct($required, $key, $item = null)
     {
+        $this->required = $required;
         $this->key = $key;
-        $this->value = $value;
-        $this->isRequired = $isRequired;
+        $this->item = $item;
     }
 
     /**

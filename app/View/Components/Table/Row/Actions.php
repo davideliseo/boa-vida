@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Table\Row;
 
 use Illuminate\View\Component;
 
-class ButtonDelete extends Component
+class Actions extends Component
 {
     public $resource;
     public $item;
@@ -27,6 +27,6 @@ class ButtonDelete extends Component
      */
     public function render()
     {
-        return view('components.button-delete');
+        return view('components.table.row.actions');
     }
 }

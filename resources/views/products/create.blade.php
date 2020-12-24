@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('card-header')
-    <x-header title="Agregar producto" btntype="btn-dark" btntext="Atrás" btnroute="products.index" />
-@endsection
-
-@section('card-body')
-    <x-form route="products.store" btntext="Agregar" :headers="\App\Models\Product::$indexables" :item="null" />
-@endsection
-
 @section('content')
-    <x-card width="8" />
+    <x-card.create title="Agregar producto" resource="products">
+        <x-slot name="fields">
+            <x-form.row.create label="Nombre"               icon="font_download"   key="name"               :required="true" />
+            <x-form.row.create label="Cantidad"             icon="workspaces"      key="quantity"           :required="true" />
+            <x-form.row.create label="Precio"               icon="attach_money"    key="price"              :required="true" />
+            <x-form.row.create label="Fecha de elaboración" icon="event_available" key="manufacturing_date" />
+            <x-form.row.create label="Fecha de vencimiento" icon="event_busy"      key="expiry_date"        />
+        </x-slot>
+    </x-card.create>
 @endsection

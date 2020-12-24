@@ -1,21 +1,25 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Card;
 
 use Illuminate\View\Component;
 
-class ButtonCreate extends Component
+class Edit extends Component
 {
+    public $title;
     public $resource;
+    public $item;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($resource)
+    public function __construct($title, $resource, $item)
     {
+        $this->title = $title;
         $this->resource = $resource;
+        $this->item = $item;
     }
 
     /**
@@ -25,6 +29,6 @@ class ButtonCreate extends Component
      */
     public function render()
     {
-        return view('components.button-create');
+        return view('components.card.edit');
     }
 }

@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <div class="card shadow" style="border-radius: 0.5rem 0.5rem 0rem 0rem;">
                     <div class="card-body p-4" style="background: linear-gradient(0deg, #dcdcdc 0%, white 10%); border-radius: 0.5rem 0.5rem 0rem 0rem; border-bottom: 0px;">
-                        <img class="mx-auto d-block" src="/img/logo.png" width="50%" alt="" />
+                        <img class="mx-auto d-block" src="/img/logo.png" width="50%" alt=""/>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="post" action="{{ route('login') }}">
                             @csrf
 
                             <div class="form-group row">

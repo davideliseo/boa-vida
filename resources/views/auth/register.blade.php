@@ -6,11 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <x-header title="Registrarse" btntype="btn-dark" btntext="Atrás" btnroute="login" />
+                    <x-header title="Registrarse" btntype="btn-dark" btntext="Atrás" btnroute="login"/>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="post" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
