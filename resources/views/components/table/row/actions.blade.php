@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-center">
+<div class="d-flex align-items-center justify-content-start">
     @can('view', $item)
         <x-button.show :resource="$resource" :item="$item" :show-text="false" />
     @endcan

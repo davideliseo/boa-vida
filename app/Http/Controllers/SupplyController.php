@@ -24,7 +24,8 @@ class SupplyController extends Controller
      */
     public function index()
     {
-        return view('supplies.index');
+        $collection = Supply::all();
+        return view('supplies.index', compact('collection'));
     }
 
     /**
