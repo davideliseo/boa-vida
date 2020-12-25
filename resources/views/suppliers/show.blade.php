@@ -14,7 +14,6 @@
             <x-form.row.show resource="suppliers" key="email"        :item="$supplier" />
             <x-form.row.show resource="suppliers" key="address"      :item="$supplier" />
             <x-form.row.show resource="suppliers" key="phone_number" :item="$supplier" />
-            <x-form.row.show resource="suppliers" key="contact_name" :item="$supplier" />
             <x-form.row.show resource="suppliers" key="created_at"   :item="$supplier" />
             <x-form.row.show resource="suppliers" key="updated_at"   :item="$supplier" />
         </x-slot>

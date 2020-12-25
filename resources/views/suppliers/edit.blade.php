@@ -8,7 +8,6 @@
             <x-form.row.edit resource="suppliers" key="email"        :item="$supplier" />
             <x-form.row.edit resource="suppliers" key="address"      :item="$supplier" />
             <x-form.row.edit resource="suppliers" key="phone_number" :item="$supplier" />
-            <x-form.row.edit resource="suppliers" key="contact_name" :item="$supplier" />
         </x-slot>
     </x-card.edit>
 @endsection

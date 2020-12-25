@@ -72,7 +72,7 @@
             },
             "amount": {
                 "label": "Monto",
-                "icon": "info",
+                "icon": "attach_money",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": true
@@ -86,14 +86,14 @@
             },
             "client_name": {
                 "label": "Nombre del cliente",
-                "icon": "info",
+                "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": true
             },
             "client_phone_number": {
                 "label": "Teléfono del cliente",
-                "icon": "info",
+                "icon": "phone",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": false
@@ -126,14 +126,14 @@
             },
             "name": {
                 "label": "Nombre",
-                "icon": "info",
+                "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": true
             },
             "rut": {
                 "label": "RUT",
-                "icon": "info",
+                "icon": "fingerprint",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": false
@@ -147,21 +147,14 @@
             },
             "address": {
                 "label": "Dirección",
-                "icon": "info",
+                "icon": "apartment",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": false
             },
             "phone_number": {
-                "label": "Teléfono de contacto",
-                "icon": "info",
-                "text-align": "left",
-                "is-indexable": true,
-                "is-required": false
-            },
-            "contact_name": {
-                "label": "Nombre de contacto",
-                "icon": "info",
+                "label": "Teléfono",
+                "icon": "phone",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": false
@@ -269,21 +262,21 @@
             },
             "rut": {
                 "label": "RUT",
-                "icon": "info",
+                "icon": "fingerprint",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": false
             },
             "address": {
                 "label": "Dirección",
-                "icon": "info",
+                "icon": "apartment",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": false
             },
             "phone_number": {
-                "label": "Teléfono de contacto",
-                "icon": "info",
+                "label": "Teléfono",
+                "icon": "phone",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": false
