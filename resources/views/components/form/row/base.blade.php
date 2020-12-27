@@ -10,14 +10,15 @@
         <div class="col-md-6 col-form-label fake-input">
             <div class="d-flex align-items-center">
                 @if ($item)
-                    {{ $item[$key] }}
+                    {{ $model::format($key, $item[$key]) }}
                 @else
                     {{ $value ?? ''}}
                 @endif
-
             </div>
         </div>
     @elseif ($inputType == "date")
-        <div></div>
+        <x-input.date :until-today="$untilToday" :is-required="$isRequired" :key="$key" :item="$item" />
+    @elseif ($inputType == "enum")
+        <x-input.enum :is-required="$isRequired" :key="$key" :item="$item" />
     @endif
 </div>

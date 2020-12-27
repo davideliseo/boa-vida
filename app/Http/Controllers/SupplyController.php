@@ -24,7 +24,7 @@ class SupplyController extends Controller
      */
     public function index()
     {
-        $collection = Supply::all();
+        $collection = Supply::latest('id')->get();
         return view('supplies.index', compact('collection'));
     }
 

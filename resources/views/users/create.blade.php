@@ -8,6 +8,7 @@
             <x-form.row.create resource="users" key="rut" />
             <x-form.row.create resource="users" key="address" />
             <x-form.row.create resource="users" key="phone_number" />
+            <roles-selection></roles-selection>
         </x-slot>
     </x-card.create>
 @endsection

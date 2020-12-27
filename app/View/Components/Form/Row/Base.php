@@ -7,8 +7,10 @@ use Illuminate\View\Component;
 class Base extends Component
 {
     public $type;
+    public $untilToday;
     public $label;
     public $icon;
+    public $model;
     public $item;
     public $key;
     public $inputType;
@@ -21,16 +23,20 @@ class Base extends Component
      */
     public function __construct(
         $type,
+        $untilToday,
         $label,
         $icon,
+        $model,
         $item,
         $key,
         $inputType,
         $isRequired
     ) {
         $this->type       = $type;
+        $this->untilToday       = $untilToday;
         $this->label      = $label;
         $this->icon       = $icon;
+        $this->model       = $model;
         $this->item       = $item;
         $this->key        = $key;
         $this->inputType  = $inputType;

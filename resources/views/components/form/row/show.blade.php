@@ -3,8 +3,10 @@
 <x-form.row.base
     type="edit"
     :input-type="$inputType"
+    :until-today="null"
     :label='config("resources.${resource}.fields.${key}.label")'
     :icon='config("resources.${resource}.fields.${key}.icon")'
+    :model='config("resources.${resource}.model")'
     :key="$key"
     {{-- Si el ítem no es nulo, se imprimirá el valor por defecto de la llave en el ítem,
     no importando si se proporiona el slot "value". --}}

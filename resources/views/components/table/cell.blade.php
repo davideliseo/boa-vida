@@ -1,5 +1,5 @@
 @props(['resource', 'key', 'item'])
 
 <td scope="col" class='text-{{ config("resources.${resource}.fields.${key}.text-align") }}'>
-    {{ $item[$key] }}
+    {{ config("resources.${resource}.model")::format($key, $item[$key]) }}
 </td>

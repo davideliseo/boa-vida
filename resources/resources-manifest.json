@@ -1,299 +1,362 @@
 {
     "products": {
-        "model": "App\\Models\\Product::class",
+        "model": "App\\Models\\Product",
+        "title": "Productos",
         "fields": {
             "id": {
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "name": {
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false,
+                "input": {
+                    "type": "text"
+                }
             },
             "quantity": {
                 "label": "Cantidad",
                 "icon": "workspaces",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "price": {
                 "label": "Precio",
                 "icon": "attach_money",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "manufacturing_date": {
                 "label": "Fecha de elaboración",
                 "icon": "event_available",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false,
+                "input": {
+                    "type": "date",
+                    "until": "today"
+                }
             },
             "expiry_date": {
                 "label": "Fecha de vencimiento",
                 "icon": "event_busy",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false,
+                "input": {
+                    "type": "date",
+                    "until": "forever"
+                }
             },
             "created_at": {
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "updated_at": {
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             }
         }
     },
     "sales": {
-        "model": "App\\Models\\Sale::class",
+        "model": "App\\Models\\Sale",
+        "title": "Ventas",
         "fields": {
             "id": {
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "amount": {
                 "label": "Monto",
                 "icon": "attach_money",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
+            },
+            "date": {
+                "label": "Fecha",
+                "icon": "event",
+                "text-align": "center",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false
             },
             "status": {
                 "label": "Estado",
                 "icon": "info",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "client_name": {
                 "label": "Nombre del cliente",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "client_phone_number": {
                 "label": "Teléfono del cliente",
                 "icon": "phone",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "created_at": {
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "updated_at": {
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             }
         }
     },
     "suppliers": {
-        "model": "App\\Models\\Supplier::class",
+        "model": "App\\Models\\Supplier",
+        "title": "Proveedores",
         "fields": {
             "id": {
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "name": {
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "rut": {
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "email": {
                 "label": "Correo electrónico",
                 "icon": "alternate_email",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "address": {
                 "label": "Dirección",
                 "icon": "apartment",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "phone_number": {
                 "label": "Teléfono",
                 "icon": "phone",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "created_at": {
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "updated_at": {
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             }
         }
     },
     "supplies": {
-        "model": "App\\Models\\Supply::class",
+        "model": "App\\Models\\Supply",
+        "title": "Insumos",
         "fields": {
             "id": {
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "name": {
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "quantity": {
                 "label": "Cantidad",
                 "icon": "workspaces",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "price": {
                 "label": "Precio",
                 "icon": "attach_money",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "expiry_date": {
                 "label": "Fecha de vencimiento",
                 "icon": "event_busy",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "purchase_date": {
                 "label": "Fecha de compra",
                 "icon": "event_available",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "created_at": {
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "updated_at": {
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             }
         }
     },
     "users": {
-        "model": "App\\Models\\User::class",
+        "model": "App\\Models\\User",
+        "title": "Usuarios",
         "fields": {
             "id": {
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "name": {
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "email": {
                 "label": "Correo electrónico",
                 "icon": "alternate_email",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": true
+                "is-required": true,
+                "is-readonly": false
             },
             "rut": {
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "address": {
                 "label": "Dirección",
                 "icon": "apartment",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "phone_number": {
                 "label": "Teléfono",
                 "icon": "phone",
                 "text-align": "left",
                 "is-indexable": true,
-                "is-required": false
+                "is-required": false,
+                "is-readonly": false
             },
             "created_at": {
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             },
             "updated_at": {
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
                 "is-indexable": false,
-                "is-required": null
+                "is-required": null,
+                "is-readonly": true
             }
         }
     }

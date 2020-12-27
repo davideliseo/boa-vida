@@ -6,7 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <x-header title="Registrarse" btntype="btn-dark" btntext="Atrás" btnroute="login"/>
+                    <div class="font-weight-bold"> {{ __('Registrarse') }} </div>
+                    <x-button.back resource="login" action="." :show-text="true" />
                 </div>
 
                 <div class="card-body">

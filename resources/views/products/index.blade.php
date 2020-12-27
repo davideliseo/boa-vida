@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-card.index title="Productos" resource="products" :model="App\Models\Product::class" :collection="$collection">
+    <x-card.index resource="products" :collection="$collection">
         <x-slot name="table">
             <x-slot name="headers">
                     <x-table.header resource="products" key="name"  />

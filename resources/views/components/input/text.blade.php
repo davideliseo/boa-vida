@@ -1,3 +1,5 @@
+@props(['key', 'item', 'isRequired'])
+
 <div>
     <input id="{{ $key }}" type="text" class="form-control @error($key) is-invalid @enderror"
         name="{{ $key }}" value="{{ old($key) ?? ($item[$key] ?? null) }}"

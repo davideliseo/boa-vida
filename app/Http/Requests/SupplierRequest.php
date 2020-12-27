@@ -26,7 +26,7 @@ class SupplierRequest extends FormRequest
         return [
             'name' => ['required'],
             // TODO: validación RUT.
-            'rut' => ['nullable', 'unique'],
+            'rut' => ['nullable', 'unique:suppliers,rut'],
             'address' => ['nullable'],
             'email' => ['nullable', 'email'],
             // TODO: validación número de teléfono.

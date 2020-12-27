@@ -26,6 +26,8 @@ class SupplyRequest extends FormRequest
         return [
             'name' => ['required'],
             'price' => ['required', 'numeric'],
+
+            // TODO: entero positivo.
             'quantity' => ['required', 'integer'],
             'expiry_date' => ['nullable', 'date'],
             'purchase_date' => ['nullable', 'date']

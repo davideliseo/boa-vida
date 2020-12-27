@@ -4,7 +4,7 @@
     action="edit"
     label="Editar"
     icon="edit"
-    color="btn-deg-orange-1"
+    color="btn-deg-orange"
     :item="$item"
     :resource="$resource"
     :show-text="$showText" />

@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $collection = Product::all();
+        $collection = Product::latest('id')->get();
         return view('products.index', compact('collection'));
     }
 

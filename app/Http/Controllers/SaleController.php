@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SaleRequest;
 use App\Models\Sale;
+use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
@@ -24,7 +25,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $collection = Sale::all();
+        $collection = Sale::latest('id')->get();
         return view('sales.index', compact('collection'));
     }
 

@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         return [
             'name' => ['required'],
             'email' => ['required', 'email'],
-            'rut' => ['nullable'],
+            'rut' => ['nullable', 'unique:users,rut'],
             'address' => ['nullable'],
             'phone_number' => ['nullable'],
         ];

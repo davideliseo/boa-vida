@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $collection = User::all();
+        $collection = User::latest('id')->get();
         return view('users.index', compact('collection'));
     }
 
@@ -47,8 +47,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
+        dd($request);
         $data = $request->validated();
         User::create($data);
         return redirect()->route('users.index');

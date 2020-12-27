@@ -26,6 +26,7 @@ class SaleRequest extends FormRequest
     {
         return [
             'amount' => ['required', 'numeric'],
+            'date' => ['required', 'date'],
             'status' => [
                 'required',
                 Rule::in(['pending', 'completed', 'failed'])

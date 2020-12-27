@@ -41,34 +41,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static $indexables = [
-        'name' => [
-            'displayName' => 'Nombre',
-            'class' => 'text-left',
-            'rules' => ['required']
-        ],
-        'email' => [
-            'displayName' => 'E-mail',
-            'class' => 'text-left',
-            'rules' => ['required', 'email']
-        ],
-        'rut' => [
-            'displayName' => 'RUT',
-            'class' => 'text-left',
-            'rules' => ['nullable']
-        ],
-        'address' => [
-            'displayName' => 'Dirección',
-            'class' => 'text-left',
-            'rules' => ['nullable']
-        ],
-        'phone_number' => [
-            'displayName' => 'Teléfono',
-            'class' => 'text-left',
-            'rules' => ['nullable']
-        ],
-    ];
-
     public function hasRole($role)
     {
         return $this->roles()->where('roles.name', $role)->exists();
@@ -116,5 +88,20 @@ class User extends Authenticatable
     public static function areNotPeers($role, User $a, User $b)
     {
         return !User::arePeers($role, $a, $b);
+    }
+
+    public static function format($key, $value)
+    {
+        if ($key == 'id') {
+            return '#' . $value;
+        } else if ($key == 'status') {
+            return Sale::formatStatus($value);
+        } else if ($key == 'amount') {
+            return '$' . $value;
+        } else if (is_a($value, 'DateTime')) {
+            return strftime("%d-%m-%Y (%H:%M:%S)", $value->getTimestamp());
+        } else {
+            return $value;
+        }
     }
 }

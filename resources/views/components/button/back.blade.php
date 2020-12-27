@@ -1,7 +1,7 @@
-@props(['resource', 'showText' => true])
+@props(['action' => 'index', 'resource', 'showText' => true])
 
 <x-button.base
-    action="index"
+    :action="$action"
     label="Atrás"
     icon="arrow_back"
     color="btn-deg-dark"

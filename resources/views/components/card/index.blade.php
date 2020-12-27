@@ -1,8 +1,8 @@
 @props(['title', 'resource', 'model', 'collection'])
 
-<x-card.base type="index" :title="$title">
+<x-card.base type="index" :title='config("resources.${resource}.title")'>
     <x-slot name="header">
-        @can('create', $model)
+        @can('create', config("resources.${resource}.model"))
             <x-button.create :resource="$resource" />
         @endcan
     </x-slot>
@@ -18,6 +18,6 @@
         </x-table>
     </x-slot>
     <x-slot name="footer">
-        {{ __("Total ${resource}") }}: {{ $collection->count() }}
+        {{ 'Total ' . strtolower(config("resources.${resource}.title")) }}: {{ $collection->count() }}
     </x-slot>
 </x-card.base>
