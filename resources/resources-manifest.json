@@ -256,6 +256,7 @@
                 "is-readonly": true
             },
             "name": {
+                "type": "text",
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
@@ -264,6 +265,7 @@
                 "is-readonly": false
             },
             "quantity": {
+                "type": "integer",
                 "label": "Cantidad",
                 "icon": "workspaces",
                 "text-align": "center",
@@ -272,6 +274,7 @@
                 "is-readonly": false
             },
             "price": {
+                "type": "currency",
                 "label": "Precio",
                 "icon": "attach_money",
                 "text-align": "center",
@@ -280,26 +283,34 @@
                 "is-readonly": false
             },
             "expiry_date": {
+                "type": "date",
                 "label": "Fecha de vencimiento",
                 "icon": "event_busy",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": true,
                 "is-required": false,
-                "is-readonly": false
+                "is-readonly": false,
+                "input": {
+                    "until": "forever"
+                }
             },
             "purchase_date": {
+                "type": "date",
                 "label": "Fecha de compra",
                 "icon": "event_available",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": true,
                 "is-required": false,
-                "is-readonly": false
+                "is-readonly": false,
+                "input": {
+                    "until": "today"
+                }
             },
             "created_at": {
                 "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": false,
                 "is-required": null,
                 "is-readonly": true
@@ -308,7 +319,7 @@
                 "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
-                "text-align": "left",
+                "text-align": "center",
                 "is-indexable": false,
                 "is-required": null,
                 "is-readonly": true
