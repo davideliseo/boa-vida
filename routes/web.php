@@ -12,9 +12,9 @@ use App\Http\Controllers\{
 
 Auth::routes();
 Route::middleware('auth')->group(function () {
-    Route::redirect('/', '/home');
+    Route::redirect('/', '/products');
 
-    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('home', function(){ return redirect('products'); })->name('home');
 
     Route::resources([
         'products'  => ProductController::class,

@@ -2,21 +2,21 @@
 
 use Illuminate\Support\Arr;
 
-function format($fieldMeta, $value, $format = null)
+function format($fieldMeta, $item, $key)
 {
-    if ($value == null) return null;
+    if ($item[$key] == null) return null;
     switch ($fieldMeta['type']) {
         case 'id':
-            return '#' . $value;
+            return '#' . $item[$key];
         case 'datetime':
-            return strftime("%d-%m-%Y (%H:%M:%S)", $value->getTimestamp());
+            return strftime("%d-%m-%Y (%H:%M:%S)", $item[$key]->getTimestamp());
         case 'date':
-            $datetime = new DateTime($value);
+            $datetime = new DateTime($item[$key]);
             return strftime("%d-%m-%Y", $datetime->getTimestamp());
         case 'currency':
-            return '$' . round($value);
+            return '$' . round($item[$key]);
         case 'progress':
-            switch ($value) {
+            switch ($item[$key]) {
                 case 'completed':
                     return 'Completada';
                 case 'pending':
@@ -24,25 +24,27 @@ function format($fieldMeta, $value, $format = null)
                 case 'failed':
                     return 'Fallida';
                 default:
-                    return $value;
+                    return $item[$key];
             }
         case 'foreign':
             switch ($fieldMeta['relation']['where']) {
                 case 'areas':
-                    return ucfirst(
-                        strtolower(
-                            implode(
-                                ', ',
-                                Arr::pluck($value->areas()->get(), 'name')
-                            )
-                        )
-                    ) . '.';
+                    return implode(
+                                ' - ',
+                                Arr::pluck($item->areas()->get(), 'name')
+                            );
+
+                case 'products':
+                    return implode(
+                                ' - ',
+                                Arr::pluck($item->products()->get(), 'name')
+                            );
 
                 default:
                     return '';
             }
         default:
-            return $value;
+            return $item[$key];
     }
 }
 

@@ -144,6 +144,21 @@
                 "is-required": false,
                 "is-readonly": false
             },
+            "products": {
+                "type": "foreign",
+                "label": "Productos",
+                "icon": "local_grocery_store",
+                "text-align": "left",
+                "is-indexable": true,
+                "is-required": false,
+                "is-readonly": false,
+                "input": {
+                    "format": "multiselect"
+                },
+                "relation": {
+                    "where": "products"
+                }
+            },
             "created_at": {
                 "type": "datetime",
                 "label": "Fecha de creación",
@@ -404,7 +419,7 @@
                 "label": "Áreas",
                 "icon": "dashboard",
                 "text-align": "left",
-                "is-indexable": false,
+                "is-indexable": true,
                 "is-required": true,
                 "is-readonly": false,
                 "input": {

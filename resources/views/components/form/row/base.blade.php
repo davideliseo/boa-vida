@@ -25,12 +25,12 @@
                             </a>
                         @endif
                     @elseif ($fieldMeta['input']['format'] == 'multiselect')
-                        {{ format($fieldMeta, $item) }}
+                        {{ format($fieldMeta, $item, $key) }}
                     @endif
 
                 @else
                     @if ($item)
-                        {{ format($fieldMeta, $item[$key]) }}
+                        {{ format($fieldMeta, $item, $key) }}
                     @else
                         {{ $value ?? '' }}
                     @endif

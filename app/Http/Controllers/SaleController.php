@@ -47,8 +47,18 @@ class SaleController extends Controller
      */
     public function store(SaleRequest $request)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        Sale::create($data);
+        $dataExceptProducts = array_diff_key($data, ['products' => null]);
+
+        // Creación y obtención de la venta creada
+        Sale::create($dataExceptProducts);
+        $sale = Sale::latest('id')->first();
+
+        // Asignación de productos
+        $products = json_decode($data['products'], true);
+        $sale->products()->sync($products);
+
         return redirect()->route('sales.index');
     }
 
@@ -83,8 +93,16 @@ class SaleController extends Controller
      */
     public function update(SaleRequest $request, Sale $sale)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        $sale->update($data);
+        $dataExceptProducts = array_diff_key($data, ['products' => null]);
+        // Actualización de la venta
+        $sale->update($dataExceptProducts);
+
+        // Asignación de productos
+        $products = json_decode($data['products'], true);
+        $sale->products()->sync($products);
+
         return redirect()->route('sales.index');
     }
 

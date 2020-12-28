@@ -16,6 +16,6 @@ $fieldMeta = config("resources.${resource}.fields.${key}");
             @endif
         </div>
     @else
-        {{ format($fieldMeta, $item[$key]) }}
+        {{ format($fieldMeta, $item, $key) }}
     @endif
 </td>

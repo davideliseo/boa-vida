@@ -33,6 +33,7 @@ class SaleRequest extends FormRequest
             ],
             'client_name' => ['required'],
             'client_phone_number' => ['nullable'],
+            'products' => ['required', 'json']
         ];
     }
 }
