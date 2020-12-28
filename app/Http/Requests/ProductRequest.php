@@ -25,7 +25,8 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'price' => ['required', 'numeric'],
+            'unit_price' => ['required', 'numeric'],
+            'wholesale_price' => ['required', 'numeric'],
             'quantity' => ['required', 'integer'],
             'manufacturing_date' => ['nullable', 'date'],
             'expiry_date' => ['nullable', 'date'],

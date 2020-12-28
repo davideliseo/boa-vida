@@ -17,7 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('quantity');
-            $table->decimal('price');
+            $table->decimal('unit_price');
+            $table->decimal('wholesale_price');
             $table->date('manufacturing_date')->nullable();
             $table->date('expiry_date')->nullable();
             $table->timestamps();

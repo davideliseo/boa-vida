@@ -31,6 +31,10 @@ class SaleRequest extends FormRequest
                 'required',
                 Rule::in(['pending', 'completed', 'failed'])
             ],
+            'type' => [
+                'required',
+                Rule::in(['receipt', 'bill'])
+            ],
             'client_name' => ['required'],
             'client_phone_number' => ['nullable'],
             'products' => ['required', 'json']

@@ -17,6 +17,7 @@ class CreateSalesTable extends Migration
             $table->id();
             $table->decimal('amount');
             $table->enum('status', ['pending', 'completed', 'failed']);
+            $table->enum('type', ['receipt', 'bill']);
             $table->date('date');
             $table->string('client_name');
             $table->string('client_phone_number')->nullable();

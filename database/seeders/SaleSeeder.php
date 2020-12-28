@@ -16,10 +16,11 @@ class SaleSeeder extends Seeder
     public function run()
     {
         DB::table('sales')->insert([
-            'amount' => 900,
-            'date' => new DateTime("today"),
+            'amount' => 9000,
             'status' => 'completed',
-            'client_name' => 'Alexis Sánchez',
+            'date' => new DateTime("today"),
+            'client_name' => 'Cliente 1',
+            'client_phone_number' => '+569 9876 4321',
             'created_at' => new DateTime("now"),
             'updated_at' => new DateTime("now"),
         ]);

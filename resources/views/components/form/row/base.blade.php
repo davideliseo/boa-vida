@@ -62,7 +62,10 @@
             @endif
 
         @elseif ($fieldMeta['type'] == "progress")
-            <x-input.radio :is-required="$fieldMeta['is-required']" :key="$key" :item="$item" />
+            <x-input.progress />
+
+        @elseif ($fieldMeta['type'] == "ticket")
+            <x-input.ticket />
 
         @endif
     @endif

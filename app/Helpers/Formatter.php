@@ -15,6 +15,15 @@ function format($fieldMeta, $item, $key)
             return strftime("%d-%m-%Y", $datetime->getTimestamp());
         case 'currency':
             return '$' . round($item[$key]);
+        case 'ticket':
+            switch ($item[$key]) {
+                case 'receipt':
+                    return 'Boleta';
+                case 'bill':
+                    return 'Factura';
+                default:
+                    return $item[$key];
+            }
         case 'progress':
             switch ($item[$key]) {
                 case 'completed':
@@ -43,6 +52,11 @@ function format($fieldMeta, $item, $key)
                     return implode(
                                 ' - ',
                                 Arr::pluck($item->supplies()->get(), 'name')
+                            );
+                case 'suppliers':
+                    return implode(
+                                ' - ',
+                                Arr::pluck($item->supplier()->get(), 'name')
                             );
 
                 default:

@@ -30,9 +30,18 @@
                 "is-required": true,
                 "is-readonly": false
             },
-            "price": {
+            "unit_price": {
                 "type": "currency",
-                "label": "Precio",
+                "label": "Precio (unitario)",
+                "icon": "attach_money",
+                "text-align": "center",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false
+            },
+            "wholesale_price": {
+                "type": "currency",
+                "label": "Precio (mayorista)",
                 "icon": "attach_money",
                 "text-align": "center",
                 "is-indexable": true,
@@ -123,6 +132,15 @@
             "status": {
                 "type": "progress",
                 "label": "Estado",
+                "icon": "info",
+                "text-align": "center",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false
+            },
+            "type": {
+                "type": "ticket",
+                "label": "Tipo",
                 "icon": "info",
                 "text-align": "center",
                 "is-indexable": true,
@@ -341,7 +359,7 @@
                 "label": "Proveedor",
                 "icon": "local_shipping",
                 "text-align": "center",
-                "is-indexable": false,
+                "is-indexable": true,
                 "is-required": false,
                 "is-readonly": false,
                 "input": {
