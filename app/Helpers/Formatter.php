@@ -1,6 +1,6 @@
 <?php
 
-function format($type, $value)
+function format($type, $value, $format = null)
 {
     if ($value == null) return null;
     switch ($type) {
@@ -13,6 +13,17 @@ function format($type, $value)
             return strftime("%d-%m-%Y", $datetime->getTimestamp());
         case 'currency':
             return '$' . round($value);
+        case 'progress':
+            switch ($value) {
+                case 'completed':
+                    return 'Completada';
+                case 'pending':
+                    return 'Pendiente';
+                case 'failed':
+                    return 'Fallida';
+                default:
+                    return $value;
+            }
         default:
             return $value;
     }

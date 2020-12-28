@@ -16,8 +16,8 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->decimal('amount');
-            $table->date('date');
             $table->enum('status', ['pending', 'completed', 'failed']);
+            $table->date('date');
             $table->string('client_name');
             $table->string('client_phone_number')->nullable();
             $table->timestamps();

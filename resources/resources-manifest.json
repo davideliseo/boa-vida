@@ -88,6 +88,7 @@
         "title": "Ventas",
         "fields": {
             "id": {
+                "type": "id",
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
@@ -96,6 +97,7 @@
                 "is-readonly": true
             },
             "amount": {
+                "type": "currency",
                 "label": "Monto",
                 "icon": "attach_money",
                 "text-align": "center",
@@ -103,15 +105,8 @@
                 "is-required": true,
                 "is-readonly": false
             },
-            "date": {
-                "label": "Fecha",
-                "icon": "event",
-                "text-align": "center",
-                "is-indexable": true,
-                "is-required": true,
-                "is-readonly": false
-            },
             "status": {
+                "type": "progress",
                 "label": "Estado",
                 "icon": "info",
                 "text-align": "center",
@@ -119,7 +114,20 @@
                 "is-required": true,
                 "is-readonly": false
             },
+            "date": {
+                "type": "date",
+                "label": "Fecha",
+                "icon": "event",
+                "text-align": "center",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false,
+                "input": {
+                    "until": "today"
+                }
+            },
             "client_name": {
+                "type": "text",
                 "label": "Nombre del cliente",
                 "icon": "font_download",
                 "text-align": "left",
@@ -128,6 +136,7 @@
                 "is-readonly": false
             },
             "client_phone_number": {
+                "type": "text",
                 "label": "Teléfono del cliente",
                 "icon": "phone",
                 "text-align": "center",
@@ -136,6 +145,7 @@
                 "is-readonly": false
             },
             "created_at": {
+                "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
@@ -144,6 +154,7 @@
                 "is-readonly": true
             },
             "updated_at": {
+                "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
@@ -158,6 +169,7 @@
         "title": "Proveedores",
         "fields": {
             "id": {
+                "type": "id",
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
@@ -206,6 +218,7 @@
                 "is-readonly": false
             },
             "created_at": {
+                "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
@@ -214,6 +227,7 @@
                 "is-readonly": true
             },
             "updated_at": {
+                "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
@@ -228,6 +242,7 @@
         "title": "Insumos",
         "fields": {
             "id": {
+                "type": "id",
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
@@ -276,6 +291,7 @@
                 "is-readonly": false
             },
             "created_at": {
+                "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
@@ -284,6 +300,7 @@
                 "is-readonly": true
             },
             "updated_at": {
+                "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
@@ -298,6 +315,7 @@
         "title": "Usuarios",
         "fields": {
             "id": {
+                "type": "id",
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
@@ -354,6 +372,7 @@
                 "is-readonly": false
             },
             "created_at": {
+                "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
@@ -362,6 +381,7 @@
                 "is-readonly": true
             },
             "updated_at": {
+                "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",

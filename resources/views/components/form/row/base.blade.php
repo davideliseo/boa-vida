@@ -31,11 +31,11 @@
             <x-input.date :until-today="$fieldMeta['input']['until']" :is-required="$fieldMeta['is-required']"
                           :key="$key" :item="$item" />
 
-        @elseif ($fieldMeta['type'] == "enum")
-            <x-input.enum :is-required="$fieldMeta['is-required']" :key="$key" :item="$item" />
+        @elseif ($fieldMeta['type'] == 'multiselect')
+            <x-input.multiselect />
 
-        @elseif ($fieldMeta['type'] == "array")
-            <x-input.array />
+        @elseif ($fieldMeta['type'] == "progress")
+            <x-input.radio :is-required="$fieldMeta['is-required']" :key="$key" :item="$item" />
 
         @endif
     @endif
