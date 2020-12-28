@@ -5,7 +5,6 @@ $fieldMeta = config("resources.${resource}.fields.${key}");
 @endphp
 
 <td scope="col" class="text-{{ $fieldMeta['text-align'] ?? 'left' }}">
-
     @if ($fieldMeta['type'] == 'progress')
         <div class="d-flex align-items-center justify-content-center">
             @if ($item[$key] == 'completed')
@@ -17,6 +16,6 @@ $fieldMeta = config("resources.${resource}.fields.${key}");
             @endif
         </div>
     @else
-        {{ format($fieldMeta['type'], $item[$key]) }}
+        {{ format($fieldMeta, $item[$key]) }}
     @endif
 </td>

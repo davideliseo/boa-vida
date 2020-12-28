@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function hasArea($area)
     {
-        return $this->areas()->where('areas.name', $area)->exists();
+        return $this->areas()->where('areas.value', $area)->exists();
     }
 
     public function doesNotHaveArea($area)
@@ -54,7 +54,7 @@ class User extends Authenticatable
     public function anyArea(...$areas)
     {
         foreach ($areas as $area) {
-            if ($this->areas()->where('areas.name', $area)->exists()) {
+            if ($this->areas()->where('areas.value', $area)->exists()) {
                 return true;
             }
         }
@@ -65,7 +65,7 @@ class User extends Authenticatable
     public function everyArea(...$areas)
     {
         foreach ($areas as $area) {
-            if ($this->areas()->where('areas.name', $area)->exists()) {
+            if ($this->areas()->where('areas.value', $area)->exists()) {
                 return true;
             }
         }

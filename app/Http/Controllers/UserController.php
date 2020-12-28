@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 
 class UserController extends Controller
@@ -45,7 +46,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(StoreUserRequest $request)
     {
         // Extracción de los datos
         $data = $request->validated();
@@ -91,10 +92,19 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        $user->update($data);
+        $dataExceptAreas = array_diff_key($data, ['areas' => null]);
+
+        // Actualización del usuario
+        $user->update($dataExceptAreas);
+
+        // Asignación de áreas
+        $areas = json_decode($data['areas'], true);
+        $user->areas()->sync($areas);
+
         return redirect()->route('users.index');
     }
 

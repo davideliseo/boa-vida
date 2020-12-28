@@ -307,7 +307,7 @@
                 }
             },
             "supplier_id": {
-                "type": "foreign-id",
+                "type": "foreign",
                 "label": "Proveedor",
                 "icon": "local_shipping",
                 "text-align": "center",
@@ -400,13 +400,16 @@
                 "is-readonly": false
             },
             "areas": {
-                "type": "foreign-id",
+                "type": "foreign",
                 "label": "Áreas",
                 "icon": "dashboard",
                 "text-align": "left",
-                "is-indexable": true,
+                "is-indexable": false,
                 "is-required": true,
                 "is-readonly": false,
+                "input": {
+                    "format": "multiselect"
+                },
                 "relation": {
                     "where": "areas"
                 }
@@ -430,5 +433,8 @@
                 "is-readonly": true
             }
         }
+    },
+    "areas": {
+        "model": "App\\Models\\Area"
     }
 }

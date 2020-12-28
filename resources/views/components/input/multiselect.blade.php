@@ -1,3 +1,5 @@
+@props(['model', 'key'])
+
 <div class="col-md-6">
-    <drop-down :options="{{ json_encode(App\Models\Area::all()) }}"></drop-down>
+    <drop-down-multi :options="{{ json_encode($model::all()) }}" input="{{ $key }}"></drop-down-multi>
 </div>

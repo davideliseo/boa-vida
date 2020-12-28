@@ -1,9 +1,11 @@
 <?php
 
-function format($type, $value, $format = null)
+use Illuminate\Support\Arr;
+
+function format($fieldMeta, $value, $format = null)
 {
     if ($value == null) return null;
-    switch ($type) {
+    switch ($fieldMeta['type']) {
         case 'id':
             return '#' . $value;
         case 'datetime':
@@ -23,6 +25,21 @@ function format($type, $value, $format = null)
                     return 'Fallida';
                 default:
                     return $value;
+            }
+        case 'foreign':
+            switch ($fieldMeta['relation']['where']) {
+                case 'areas':
+                    return ucfirst(
+                        strtolower(
+                            implode(
+                                ', ',
+                                Arr::pluck($value->areas()->get(), 'name')
+                            )
+                        )
+                    ) . '.';
+
+                default:
+                    return '';
             }
         default:
             return $value;

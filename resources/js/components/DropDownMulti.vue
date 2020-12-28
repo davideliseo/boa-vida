@@ -8,14 +8,14 @@
             :clear-on-select="false"
             :preserve-search="true"
             placeholder=""
-            label="label"
-            track-by="label"
+            label="name"
+            track-by="id"
             :preselect-first="true"
             :taggable="true"
-            :searchable="false"
+            :searchable="true"
         >
         </multiselect>
-        <input type="hidden" name="areas" :value="selectedValues" />
+        <input type="hidden" :name="this.input" :value="selectedValues" />
     </div>
 </template>
 
@@ -43,6 +43,12 @@ export default {
                 return [];
             },
         },
+        input: {
+            type: String,
+            default() {
+                return "";
+            },
+        },
     },
 
     data() {
@@ -54,5 +60,4 @@ export default {
 </script>
 
 <style>
-
 </style>

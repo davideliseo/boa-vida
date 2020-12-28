@@ -10,11 +10,11 @@ class AreaSeeder extends Seeder
     public function run()
     {
         DB::table('areas')->insert([
-            ['name' => 'products', 'label' => 'Productos'],
-            ['name' => 'sales', 'label' => 'Ventas'],
-            ['name' => 'suppliers', 'label' => 'Proveedores'],
-            ['name' => 'supplies', 'label' => 'Insumos'],
-            ['name' => 'users', 'label' => 'Usuarios'],
+            ['value' => 'products', 'name' => 'Productos'],
+            ['value' => 'sales', 'name' => 'Ventas'],
+            ['value' => 'suppliers', 'name' => 'Proveedores'],
+            ['value' => 'supplies', 'name' => 'Insumos'],
+            ['value' => 'users', 'name' => 'Usuarios'],
         ]);
     }
 }
