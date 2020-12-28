@@ -1,5 +1,9 @@
 @props(['resource', 'key', 'item'])
 
-<td scope="col" class='text-{{ config("resources.${resource}.fields.${key}.text-align") }}'>
-    {{ config("resources.${resource}.model")::format($key, $item[$key]) }}
+@php
+    $fieldMeta = config("resources.${resource}.fields.${key}");
+@endphp
+
+<td scope="col" class="text-{{ $fieldMeta['text-align'] ?? 'left' }}">
+    {{ format($fieldMeta['type'], $item[$key]) }}
 </td>

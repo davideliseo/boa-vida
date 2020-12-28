@@ -1,20 +1,13 @@
-@props(['inputType' => 'fake', 'resource', 'key', 'item' => null])
+@props(['resource', 'key', 'item'])
 
 <x-form.row.base
-    type="edit"
-    :input-type="$inputType"
-    :until-today="null"
-    :label='config("resources.${resource}.fields.${key}.label")'
-    :icon='config("resources.${resource}.fields.${key}.icon")'
-    :model='config("resources.${resource}.model")'
+    action="show"
     :key="$key"
-    {{-- Si el ítem no es nulo, se imprimirá el valor por defecto de la llave en el ítem,
-    no importando si se proporiona el slot "value". --}}
-    :item="$item"
-    :is-required="null">
+    :field-meta='config("resources.${resource}.fields.${key}")'
+    :item="$item">
 
     <x-slot name="value">
-        {{ $value ?? ''}}
+        {{ $value ?? '' }}
     </x-slot>
 
 </x-form.row.base>

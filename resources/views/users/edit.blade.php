@@ -8,6 +8,7 @@
             <x-form.row.edit resource="users" key="rut"          :item="$user" />
             <x-form.row.edit resource="users" key="address"      :item="$user" />
             <x-form.row.edit resource="users" key="phone_number" :item="$user" />
+            <drop-down :options="{{ json_encode(App\Models\Area::all()) }}"></drop-down>
         </x-slot>
     </x-card.edit>
 @endsection

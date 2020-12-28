@@ -41,20 +41,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function hasRole($role)
+    public function hasArea($area)
     {
-        return $this->roles()->where('roles.name', $role)->exists();
+        return $this->areas()->where('areas.name', $area)->exists();
     }
 
-    public function doesNotHaveRole($role)
+    public function doesNotHaveArea($area)
     {
-        return !$this->hasRole($role);
+        return !$this->hasArea($area);
     }
 
-    public function anyRole(...$roles)
+    public function anyArea(...$areas)
     {
-        foreach ($roles as $role) {
-            if ($this->roles()->where('roles.name', $role)->exists()) {
+        foreach ($areas as $area) {
+            if ($this->areas()->where('areas.name', $area)->exists()) {
                 return true;
             }
         }
@@ -62,10 +62,10 @@ class User extends Authenticatable
         return false;
     }
 
-    public function everyRole(...$roles)
+    public function everyArea(...$areas)
     {
-        foreach ($roles as $role) {
-            if ($this->roles()->where('roles.name', $role)->exists()) {
+        foreach ($areas as $area) {
+            if ($this->areas()->where('areas.name', $area)->exists()) {
                 return true;
             }
         }
@@ -73,21 +73,19 @@ class User extends Authenticatable
         return false;
     }
 
-    public function roles()
+    public function areas()
     {
-        return $this->belongsToMany(Role::class)
-            ->using(RoleUser::class)
-            ->withPivot('permissions')
+        return $this->belongsToMany(Area::class)
             ->withTimestamps();
     }
 
-    public static function arePeers($role, User $a, User $b)
+    public static function arePeers($area, User $a, User $b)
     {
-        return $a->hasRole($role) && $b->hasRole($role);
+        return $a->hasArea($area) && $b->hasArea($area);
     }
-    public static function areNotPeers($role, User $a, User $b)
+    public static function areNotPeers($area, User $a, User $b)
     {
-        return !User::arePeers($role, $a, $b);
+        return !User::arePeers($area, $a, $b);
     }
 
     public static function format($key, $value)

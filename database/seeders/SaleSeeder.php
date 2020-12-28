@@ -17,6 +17,7 @@ class SaleSeeder extends Seeder
     {
         DB::table('sales')->insert([
             'amount' => 900,
+            'date' => new DateTime("today"),
             'status' => 'completed',
             'client_name' => 'Alexis Sánchez',
             'created_at' => new DateTime("now"),

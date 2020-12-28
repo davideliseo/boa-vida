@@ -18,7 +18,7 @@ class SupplierPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -30,7 +30,7 @@ class SupplierPolicy
      */
     public function view(User $user, Supplier $supplier)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -41,7 +41,7 @@ class SupplierPolicy
      */
     public function create(User $user)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -53,7 +53,7 @@ class SupplierPolicy
      */
     public function update(User $user, Supplier $supplier)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -65,7 +65,7 @@ class SupplierPolicy
      */
     public function delete(User $user, Supplier $supplier)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -77,7 +77,7 @@ class SupplierPolicy
      */
     public function restore(User $user, Supplier $supplier)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 
     /**
@@ -89,6 +89,6 @@ class SupplierPolicy
      */
     public function forceDelete(User $user, Supplier $supplier)
     {
-        return $user->anyRole('admin', 'suppliers');
+        return $user->anyArea('admin', 'suppliers');
     }
 }

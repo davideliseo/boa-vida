@@ -1,8 +1,8 @@
 /* Clases personalizadas */
 body {
-    /* background: linear-gradient(#ff6021 0%, #ffb22e 50%, #00cf6b 100%); */
     background: linear-gradient(#ff9966, #ff5e62);
-    font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     width: 100%;
@@ -205,4 +205,8 @@ body {
 
 th {
     border-top: 0px !important;
+}
+
+td {
+    vertical-align: middle !important;
 }

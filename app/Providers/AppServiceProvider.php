@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Product;
-use DateTime;
+use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 

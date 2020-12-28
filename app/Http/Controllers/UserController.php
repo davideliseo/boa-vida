@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -16,7 +15,6 @@ class UserController extends Controller
     public function __construct()
     {
         $this->authorizeResource(User::class, 'user');
-        $this->middleware('password.confirm')->only('destroy');
     }
 
     /**
@@ -47,11 +45,20 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        dd($request);
+        // Extracción de los datos
         $data = $request->validated();
-        User::create($data);
+        $dataExceptAreas = array_diff_key($data, ['areas' => null]);
+
+        // Creación y obtención del usuario creado
+        User::create($dataExceptAreas + ['password' => '12341234']);
+        $user = User::latest('id')->first();
+
+        // Asignación de áreas
+        $areas = json_decode($data['areas'], true);
+        $user->areas()->sync($areas);
+
         return redirect()->route('users.index');
     }
 

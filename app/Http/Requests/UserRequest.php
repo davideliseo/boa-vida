@@ -29,6 +29,7 @@ class UserRequest extends FormRequest
             'rut' => ['nullable', 'unique:users,rut'],
             'address' => ['nullable'],
             'phone_number' => ['nullable'],
+            'areas' => ['required', 'json']
         ];
     }
 }

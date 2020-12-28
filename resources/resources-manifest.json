@@ -4,6 +4,7 @@
         "title": "Productos",
         "fields": {
             "id": {
+                "type": "id",
                 "label": "ID",
                 "icon": "qr_code",
                 "text-align": "left",
@@ -12,17 +13,16 @@
                 "is-readonly": true
             },
             "name": {
+                "type": "text",
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": true,
-                "is-readonly": false,
-                "input": {
-                    "type": "text"
-                }
+                "is-readonly": false
             },
             "quantity": {
+                "type": "integer",
                 "label": "Cantidad",
                 "icon": "workspaces",
                 "text-align": "center",
@@ -31,6 +31,7 @@
                 "is-readonly": false
             },
             "price": {
+                "type": "currency",
                 "label": "Precio",
                 "icon": "attach_money",
                 "text-align": "center",
@@ -39,6 +40,7 @@
                 "is-readonly": false
             },
             "manufacturing_date": {
+                "type": "date",
                 "label": "Fecha de elaboración",
                 "icon": "event_available",
                 "text-align": "center",
@@ -46,11 +48,11 @@
                 "is-required": false,
                 "is-readonly": false,
                 "input": {
-                    "type": "date",
                     "until": "today"
                 }
             },
             "expiry_date": {
+                "type": "date",
                 "label": "Fecha de vencimiento",
                 "icon": "event_busy",
                 "text-align": "center",
@@ -58,11 +60,11 @@
                 "is-required": false,
                 "is-readonly": false,
                 "input": {
-                    "type": "date",
                     "until": "forever"
                 }
             },
             "created_at": {
+                "type": "datetime",
                 "label": "Fecha de creación",
                 "icon": "more_time",
                 "text-align": "left",
@@ -71,6 +73,7 @@
                 "is-readonly": true
             },
             "updated_at": {
+                "type": "datetime",
                 "label": "Fecha de modificación",
                 "icon": "update",
                 "text-align": "left",
@@ -340,6 +343,14 @@
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": false,
+                "is-readonly": false
+            },
+            "areas": {
+                "label": "Áreas",
+                "icon": "dashboard",
+                "text-align": "left",
+                "is-indexable": true,
+                "is-required": true,
                 "is-readonly": false
             },
             "created_at": {

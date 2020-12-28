@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Permissions;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -37,24 +36,15 @@ class UserSeeder extends Seeder
         ]);
 
         $user = User::find(1);
-        $user->roles()->sync([
-            1 => ['permissions' => Permissions::$all],
-            3 => ['permissions' => Permissions::$all]
-        ]);
+        $user->areas()->sync([1, 2, 3, 4, 5]);
 
         $user = User::find(2);
-        $user->roles()->sync([
-            6 => ['permissions' => Permissions::$all]
-        ]);
+        $user->areas()->sync([5]);
 
         $user = User::find(3);
-        $user->roles()->sync([
-            2 => ['permissions' => Permissions::$all]
-        ]);
+        $user->areas()->sync([2]);
 
         $user = User::find(4);
-        $user->roles()->sync([
-            6 => ['permissions' => Permissions::$all]
-        ]);
+        $user->areas()->sync([6]);
     }
 }
