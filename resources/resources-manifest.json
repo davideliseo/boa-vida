@@ -178,6 +178,7 @@
                 "is-readonly": true
             },
             "name": {
+                "type": "text",
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
@@ -186,6 +187,7 @@
                 "is-readonly": false
             },
             "rut": {
+                "type": "text",
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
@@ -194,6 +196,7 @@
                 "is-readonly": false
             },
             "email": {
+                "type": "text",
                 "label": "Correo electrónico",
                 "icon": "alternate_email",
                 "text-align": "left",
@@ -202,6 +205,7 @@
                 "is-readonly": false
             },
             "address": {
+                "type": "text",
                 "label": "Dirección",
                 "icon": "apartment",
                 "text-align": "left",
@@ -210,6 +214,7 @@
                 "is-readonly": false
             },
             "phone_number": {
+                "type": "text",
                 "label": "Teléfono",
                 "icon": "phone",
                 "text-align": "left",
