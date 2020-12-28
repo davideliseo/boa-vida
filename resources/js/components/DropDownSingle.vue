@@ -11,7 +11,7 @@
             :searchable="true"
         >
         </multiselect>
-        <input type="hidden" name="supplier_id" :value="selectedValue" />
+        <input type="hidden" :id="this.input" :name="this.input" :value="selectedValue" />
     </div>
 </template>
 
@@ -35,6 +35,12 @@ export default {
                 return [];
             },
         },
+        input: {
+            type: String,
+            default() {
+                return "";
+            }
+        }
     },
 
     data() {

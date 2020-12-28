@@ -1,3 +1,5 @@
+@props(['model', 'key'])
+
 <div class="col-md-6">
-    <select-supplier :options="{{ json_encode(App\Models\Supplier::latest('id')->get()->toArray()) }}"></select-supplier>
+    <drop-down-single :options="{{ json_encode($model::latest('id')->get()->toArray()) }}" input="{{ $key }}"></drop-down-single>
 </div>

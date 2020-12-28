@@ -97,8 +97,20 @@ class SupplyController extends Controller
      */
     public function update(SupplyRequest $request, Supply $supply)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        $supply->update($data);
+        $dataExceptSupplier = array_diff_key($data, ['supplier_id' => null]);
+
+        // Actualizar insumo
+        $supply->update($dataExceptSupplier);
+
+        // Asignación de proveedor
+        $supplierId = json_decode($data['supplier_id'], true);
+        $supplier = Supplier::find($supplierId);
+
+        $supply->supplier()->associate($supplier);
+        $supply->save();
+
         return redirect()->route('supplies.index');
     }
 

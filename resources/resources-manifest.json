@@ -400,13 +400,16 @@
                 "is-readonly": false
             },
             "areas": {
-                "type": "multiselect",
+                "type": "foreign-id",
                 "label": "Áreas",
                 "icon": "dashboard",
                 "text-align": "left",
                 "is-indexable": true,
                 "is-required": true,
-                "is-readonly": false
+                "is-readonly": false,
+                "relation": {
+                    "where": "areas"
+                }
             },
             "created_at": {
                 "type": "datetime",

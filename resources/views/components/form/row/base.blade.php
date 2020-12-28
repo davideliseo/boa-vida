@@ -16,8 +16,8 @@
                 @if ($fieldMeta['type'] == 'foreign-id')
                     @if ($fieldMeta['input']['format'] == 'select')
                         @php
-                        $childResource = $fieldMeta['relation']['where'];
-                        $child = config("resources.${childResource}.model")::find($item[$key]);
+                            $childResource = $fieldMeta['relation']['where'];
+                            $child = config("resources.${childResource}.model")::find($item[$key]);
                         @endphp
                         @if ($child)
                             <a href="{{ route($childResource . '.show', $child) }}">
@@ -47,8 +47,11 @@
                           :key="$key" :item="$item" />
 
         @elseif ($fieldMeta['type'] == 'foreign-id')
+            @php
+                $childResource = $fieldMeta['relation']['where'];
+            @endphp
             @if ($fieldMeta['input']['format'] == 'select')
-                <x-input.select />
+                <x-input.select :model='config("resources.${childResource}.model")' :key="$key" />
 
             @elseif ($fieldMeta['input']['format'] == 'multiselect')
                 <x-input.multiselect />
