@@ -46,8 +46,18 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        Product::create($data);
+        $dataExceptSupplies = array_diff_key($data, ['supplies' => null]);
+
+        // Creación y obtención del producto creado
+        Product::create($dataExceptSupplies);
+        $product = Product::latest('id')->first();
+
+        // Asignación de insumos
+        $supplies = json_decode($data['supplies'], true);
+        $product->supplies()->sync($supplies);
+
         return redirect()->route('products.index');
     }
 
@@ -82,8 +92,17 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        $product->update($data);
+        $dataExceptSupplies = array_diff_key($data, ['supplies' => null]);
+
+        // Actualización del producto
+        $product->update($dataExceptSupplies);
+
+        // Asignación de insumos
+        $supplies = json_decode($data['supplies'], true);
+        $product->supplies()->sync($supplies);
+
         return redirect()->route('products.index');
     }
 

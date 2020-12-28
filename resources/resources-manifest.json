@@ -63,6 +63,21 @@
                     "until": "forever"
                 }
             },
+            "supplies": {
+                "type": "foreign",
+                "label": "Insumos",
+                "icon": "category",
+                "text-align": "left",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false,
+                "input": {
+                    "format": "multiselect"
+                },
+                "relation": {
+                    "where": "supplies"
+                }
+            },
             "created_at": {
                 "type": "datetime",
                 "label": "Fecha de creación",
@@ -392,7 +407,7 @@
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
-                "is-indexable": true,
+                "is-indexable": false,
                 "is-required": false,
                 "is-readonly": false
             },

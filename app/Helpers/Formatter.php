@@ -39,6 +39,11 @@ function format($fieldMeta, $item, $key)
                                 ' - ',
                                 Arr::pluck($item->products()->get(), 'name')
                             );
+                case 'supplies':
+                    return implode(
+                                ' - ',
+                                Arr::pluck($item->supplies()->get(), 'name')
+                            );
 
                 default:
                     return '';

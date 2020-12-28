@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function supply()
+    public function supplies()
     {
         return $this->belongsToMany(Supply::class);
     }

@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
             'quantity' => ['required', 'integer'],
             'manufacturing_date' => ['nullable', 'date'],
             'expiry_date' => ['nullable', 'date'],
+            'supplies' => ['required', 'json']
         ];
     }
 }

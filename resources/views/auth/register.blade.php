@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-header">
                     <div class="font-weight-bold"> {{ __('Registrarse') }} </div>
                     <x-button.back resource="login" action="." :show-text="true" />
@@ -66,7 +66,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary rounded shadow-sm">
+                                <button type="submit" class="btn-v2 btn-deg-dark-blue rounded shadow-sm">
                                     Registrarse
                                 </button>
                             </div>

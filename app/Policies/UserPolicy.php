@@ -74,10 +74,8 @@ class UserPolicy
         // - Nadie puede eliminar administradores, excepto el propietario.
         // - Un encargado de usuario no puede eliminar a otro encargado de su
         //   misma área.
-        return ($user->hasArea('users')
-            && ($user->id != $model->id)
-            && User::areNotPeers('users', $user, $model))
-            || ($model->hasArea('admin') && $user->hasArea('owner'));
+        return $user->hasArea('users')
+            && ($user->id != $model->id);
     }
 
     /**
