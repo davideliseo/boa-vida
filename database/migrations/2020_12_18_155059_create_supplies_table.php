@@ -15,14 +15,13 @@ class CreateSuppliesTable extends Migration
     {
         Schema::create('supplies', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
             $table->unsignedBigInteger('quantity');
             $table->decimal('price');
             $table->date('expiry_date')->nullable();
-            // TODO: confirmar si es necesario, o basta con los timestamps.
             $table->date('purchase_date')->nullable();
             $table->foreignId('supplier_id')->nullable();
+            $table->timestamps();
         });
     }
 

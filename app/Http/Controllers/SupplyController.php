@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SupplyRequest;
+use App\Models\Supplier;
 use App\Models\Supply;
 
 class SupplyController extends Controller
@@ -46,8 +47,22 @@ class SupplyController extends Controller
      */
     public function store(SupplyRequest $request)
     {
+        // Extracción de los datos
         $data = $request->validated();
-        Supply::create($data);
+        $dataExceptSupplier = array_diff_key($data, ['supplier_id' => null]);
+
+
+        // Creación y obtención del insumo creado
+        Supply::create($dataExceptSupplier);
+        $supply = Supply::latest('id')->first();
+
+        // Asignación de áreas
+        $supplierId = json_decode($data['supplier_id'], true);
+        $supplier = Supplier::find($supplierId);
+
+        $supply->supplier()->associate($supplier);
+        $supply->save();
+
         return redirect()->route('supplies.index');
     }
 

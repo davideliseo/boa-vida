@@ -190,6 +190,10 @@ body {
     font-size: 18px;
 }
 
+.material-icons-round.md-24 {
+    font-size: 24px;
+}
+
 .material-icons-round.md-auto {
     font-size: auto;
 }

@@ -13,10 +13,25 @@
     @if ($action == 'show')
         <div class="col-md-6 col-form-label fake-input">
             <div class="d-flex align-items-center">
-                @if ($item)
-                    {{ format($fieldMeta['type'], $item[$key]) }}
+                @if ($fieldMeta['type'] == 'foreign-id')
+                    @if ($fieldMeta['input']['format'] == 'select')
+                        @php
+                        $childResource = $fieldMeta['relation']['where'];
+                        $child = config("resources.${childResource}.model")::find($item[$key]);
+                        @endphp
+                        @if ($child)
+                            <a href="{{ route($childResource . '.show', $child) }}">
+                                {{ $child->name }}
+                            </a>
+                        @endif
+                    @endif
+
                 @else
-                    {{ $value ?? '' }}
+                    @if ($item)
+                        {{ format($fieldMeta['type'], $item[$key]) }}
+                    @else
+                        {{ $value ?? '' }}
+                    @endif
                 @endif
             </div>
         </div>
@@ -31,8 +46,14 @@
             <x-input.date :until-today="$fieldMeta['input']['until']" :is-required="$fieldMeta['is-required']"
                           :key="$key" :item="$item" />
 
-        @elseif ($fieldMeta['type'] == 'multiselect')
-            <x-input.multiselect />
+        @elseif ($fieldMeta['type'] == 'foreign-id')
+            @if ($fieldMeta['input']['format'] == 'select')
+                <x-input.select />
+
+            @elseif ($fieldMeta['input']['format'] == 'multiselect')
+                <x-input.multiselect />
+
+            @endif
 
         @elseif ($fieldMeta['type'] == "progress")
             <x-input.radio :is-required="$fieldMeta['is-required']" :key="$key" :item="$item" />

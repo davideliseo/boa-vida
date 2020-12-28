@@ -36,6 +36,13 @@ function indexable($fields)
     });
 }
 
+function writable($fields)
+{
+    return array_filter($fields, function ($field) {
+        return !$field['is-readonly'];
+    });
+}
+
 function headers($fields)
 {
     return array_keys($fields);

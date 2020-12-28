@@ -306,6 +306,21 @@
                     "until": "today"
                 }
             },
+            "supplier_id": {
+                "type": "foreign-id",
+                "label": "Proveedor",
+                "icon": "local_shipping",
+                "text-align": "center",
+                "is-indexable": false,
+                "is-required": false,
+                "is-readonly": false,
+                "input": {
+                    "format": "select"
+                },
+                "relation": {
+                    "where": "suppliers"
+                }
+            },
             "created_at": {
                 "type": "datetime",
                 "label": "Fecha de creación",
@@ -340,6 +355,7 @@
                 "is-readonly": true
             },
             "name": {
+                "type": "text",
                 "label": "Nombre",
                 "icon": "font_download",
                 "text-align": "left",
@@ -348,6 +364,7 @@
                 "is-readonly": false
             },
             "email": {
+                "type": "text",
                 "label": "Correo electrónico",
                 "icon": "alternate_email",
                 "text-align": "left",
@@ -356,6 +373,7 @@
                 "is-readonly": false
             },
             "rut": {
+                "type": "text",
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
@@ -364,6 +382,7 @@
                 "is-readonly": false
             },
             "address": {
+                "type": "text",
                 "label": "Dirección",
                 "icon": "apartment",
                 "text-align": "left",
@@ -372,6 +391,7 @@
                 "is-readonly": false
             },
             "phone_number": {
+                "type": "text",
                 "label": "Teléfono",
                 "icon": "phone",
                 "text-align": "left",
@@ -380,6 +400,7 @@
                 "is-readonly": false
             },
             "areas": {
+                "type": "multiselect",
                 "label": "Áreas",
                 "icon": "dashboard",
                 "text-align": "left",

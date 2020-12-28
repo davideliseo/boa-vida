@@ -1,6 +1,6 @@
 @props([
 'resource',
-'fields' => headers(indexable(config("resources.${resource}.fields"))),
+'fields' => headers(writable(config("resources.${resource}.fields"))),
 'item',
 'title'
 ])
