@@ -24,11 +24,12 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
-            'email' => ['required', 'email', 'unique:users,email'],
-            'rut' => ['nullable', 'unique:users,rut'],
-            'address' => ['nullable'],
-            'phone_number' => ['nullable'],
+            'name' => ['required', 'string', 'max:255'],
+            'rut' => ['required', 'string', 'min:7', 'max:8', 'regex:/^[0-9]+$/', 'unique:users,rut'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['nullable', 'string'],
+            'phone_number' => ['nullable', 'string'],
             'areas' => ['required', 'json']
         ];
     }

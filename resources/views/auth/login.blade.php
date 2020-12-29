@@ -5,8 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow" style="border-radius: 0.5rem 0.5rem 0rem 0rem;">
-                    <div class="card-body p-4" style="background: linear-gradient(0deg, #dcdcdc 0%, white 10%); border-radius: 0.5rem 0.5rem 0rem 0rem; border-bottom: 0px;">
-                        <img class="mx-auto d-block" src="/img/logo.png" width="50%" alt=""/>
+                    <div class="card-body p-4"
+                         style="background: linear-gradient(0deg, #dcdcdc 0%, white 10%); border-radius: 0.5rem 0.5rem 0rem 0rem; border-bottom: 0px;">
+                        <img class="mx-auto d-block" src="/img/logo.png" width="50%" alt="" />
                     </div>
                 </div>
             </div>
@@ -15,48 +16,30 @@
                     <div class="card-header p-3">
                         <strong>Iniciar sesión</strong>
                     </div>
-                    <div class="card-body">
-
-                        <form method="post" action="{{ route('login') }}">
+                    <div class="card-body my-2 pb-1 ml-5 mr-4 px-5">
+                        <form id="login" method="post" action="{{ route('login') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">
-                                    Correo electrónico
+                                <label for="rut" class="col-md-4 col-form-label text-md-left">
+                                    <x-icon-label label="RUT" icon="fingerprint" pr="3" md="auto" />
                                 </label>
-
                                 <div class="col-md-7">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                           name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <x-input.text :is-required="true" key="rut" />
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">
-                                    Contraseña
+                                <label for="password" class="col-md-4 col-form-label text-md-left">
+                                    <x-icon-label label="Contraseña" icon="vpn_key" pr="3" md="auto" />
                                 </label>
-
                                 <div class="col-md-7">
-                                    <input id="password" type="password"
-                                           class="form-control @error('password') is-invalid @enderror" name="password"
-                                           required autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <x-input.text :is-required="true" key="password" type="password" />
                                 </div>
                             </div>
 
                             <div class="form-group row align-middle">
-                                <div class="col-md-7 offset-md-4">
+                                <div class="col-md-6 offset-md-4">
                                     <div class="form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                                {{ old('remember') ? 'checked' : '' }}>
@@ -66,20 +49,14 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group row mb-0 justify-content-center">
-                                <div class="col-md-7 offset-md-4">
-                                    <button type="submit" class="btn-v2 btn-deg-dark-blue">
-                                        Iniciar sesión
-                                    </button>
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link pt-2" href="{{ route('password.request') }}">
-                                            ¿Olvidó su contraseña?
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
                         </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-center py-0">
+                            <button form="login" type="submit" class="btn-v2 btn-deg-dark-blue">
+                                Iniciar sesión
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

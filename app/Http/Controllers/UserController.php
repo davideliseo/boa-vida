@@ -31,7 +31,6 @@ class UserController extends Controller
     }
 
     /**
-     * TODO: (david) reemplazar con registro de usuario.
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -51,11 +50,10 @@ class UserController extends Controller
     {
         // Extracción de los datos
         $data = $request->validated();
-        $dataExceptAreas = array_diff_key($data, ['areas' => null]);
+        $dataDiff = array_diff_key($data, ['areas' => null, 'password' => null]);
 
         // Creación y obtención del usuario creado
-        User::create($dataExceptAreas + ['password' => Hash::make('12341234')]);
-        $user = User::latest('id')->first();
+        $user = User::create($dataDiff + ['password' => Hash::make($data['password'])]);
 
         // Asignación de áreas
         $areas = json_decode($data['areas'], true);
@@ -97,10 +95,10 @@ class UserController extends Controller
     {
         // Extracción de los datos
         $data = $request->validated();
-        $dataExceptAreas = array_diff_key($data, ['areas' => null]);
+        $dataDiff = array_diff_key($data, ['areas' => null, 'password' => null]);
 
         // Actualización del usuario
-        $user->update($dataExceptAreas);
+        $user->update($dataDiff + ['password' => Hash::make($data['password'])]);
 
         // Asignación de áreas
         $areas = json_decode($data['areas'], true);
@@ -119,5 +117,10 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('users.index');
+    }
+
+    public function newPassword(User $user)
+    {
+        return view('auth.passwords.new');
     }
 }

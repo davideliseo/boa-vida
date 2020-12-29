@@ -33,7 +33,7 @@
             "unit_price": {
                 "type": "currency",
                 "label": "Precio (unitario)",
-                "icon": "attach_money",
+                "icon": "filter_1",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": true,
@@ -42,7 +42,7 @@
             "wholesale_price": {
                 "type": "currency",
                 "label": "Precio (mayorista)",
-                "icon": "attach_money",
+                "icon": "filter_9_plus",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": true,
@@ -141,7 +141,7 @@
             "type": {
                 "type": "ticket",
                 "label": "Tipo",
-                "icon": "info",
+                "icon": "receipt",
                 "text-align": "center",
                 "is-indexable": true,
                 "is-required": true,
@@ -235,7 +235,7 @@
                 "is-readonly": false
             },
             "rut": {
-                "type": "text",
+                "type": "rut",
                 "label": "RUT",
                 "icon": "fingerprint",
                 "text-align": "center",
@@ -411,6 +411,15 @@
                 "is-required": true,
                 "is-readonly": false
             },
+            "rut": {
+                "type": "rut",
+                "label": "RUT",
+                "icon": "fingerprint",
+                "text-align": "center",
+                "is-indexable": true,
+                "is-required": true,
+                "is-readonly": false
+            },
             "email": {
                 "type": "text",
                 "label": "Correo electrónico",
@@ -420,13 +429,13 @@
                 "is-required": true,
                 "is-readonly": false
             },
-            "rut": {
-                "type": "text",
-                "label": "RUT",
-                "icon": "fingerprint",
-                "text-align": "center",
+            "password": {
+                "type": "password",
+                "label": "Contraseña",
+                "icon": "vpn_key",
+                "text-align": "left",
                 "is-indexable": false,
-                "is-required": false,
+                "is-required": true,
                 "is-readonly": false
             },
             "address": {
@@ -434,7 +443,7 @@
                 "label": "Dirección",
                 "icon": "apartment",
                 "text-align": "left",
-                "is-indexable": true,
+                "is-indexable": false,
                 "is-required": false,
                 "is-readonly": false
             },
@@ -443,7 +452,7 @@
                 "label": "Teléfono",
                 "icon": "phone",
                 "text-align": "left",
-                "is-indexable": true,
+                "is-indexable": false,
                 "is-required": false,
                 "is-readonly": false
             },

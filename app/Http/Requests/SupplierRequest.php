@@ -25,11 +25,9 @@ class SupplierRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            // TODO: validación RUT.
-            'rut' => ['nullable', 'unique:suppliers,rut'],
+            'rut' => ['required', 'min:7', 'max:8', 'regex:/^[0-9]+$/', 'unique:suppliers,rut'],
             'address' => ['nullable'],
             'email' => ['nullable', 'email'],
-            // TODO: validación número de teléfono.
             'phone_number' => ['nullable'],
             'contact_name' => ['nullable'],
         ];

@@ -40,8 +40,6 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        // Solo los administradores y encargados de usuarios pueden crear
-        // nuevos usuarios.
         return $user->hasArea('users');
     }
 
@@ -54,9 +52,12 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        // TODO: (david) confirmar si cualquier administrador o encargado de
-        // usuarios puede editar los atributos de los usuarios.
-        return $user->hasArea('users');
+        // - Nadie puede editar al administrador, excepto él mismo.
+        // - Un encargado no puede editar a otro encargado de su
+        //   misma área, a no ser que el editor sea además administrador.
+        return $user->hasArea('users')
+            && (!$model->admin || $user->admin)
+            && (User::areNotPeers('users', $user, $model) || $user->admin);
     }
 
     /**
@@ -69,13 +70,14 @@ class UserPolicy
     public function delete(User $user, User $model)
     {
         // Criterios:
-        // - El usuario debe ser administrador o ser encargado de usuarios.
         // - El usuario no puede eliminarse a sí mismo.
-        // - Nadie puede eliminar administradores, excepto el propietario.
+        // - Nadie puede eliminar encargados de usuario, excepto el administrador.
         // - Un encargado de usuario no puede eliminar a otro encargado de su
-        //   misma área.
+        //   misma área, a no ser que el que ejecuta la acción sea además administrador.
         return $user->hasArea('users')
-            && ($user->id != $model->id);
+            && ($user->id != $model->id)
+            && !$model->admin
+            && (User::areNotPeers('users', $user, $model) || $user->admin);
     }
 
     /**
@@ -87,7 +89,7 @@ class UserPolicy
      */
     public function restore(User $user, User $model)
     {
-         return $user->hasArea('users');
+        return $user->hasArea('users');
     }
 
     /**

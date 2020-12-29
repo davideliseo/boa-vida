@@ -6,7 +6,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="font-weight-bold"> {{ __($title) }} </div>
                         <div>
-                            {{ $header }}
+                            {{ $header ?? '' }}
                         </div>
                     </div>
                 </div>

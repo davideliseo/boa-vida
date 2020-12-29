@@ -8,7 +8,7 @@
         @method('delete')
         <x-button.submit :resource="$resource" :form-id="false" :color="$color" :label="$label" :icon="$icon"
                          :showText="$showText"
-                         confirm="¿Está seguro/a que desea eliminar éste ítem?" />
+                         confirm="¿Está seguro/a que desea eliminar éste elemento?" />
     </form>
 @elseif (in_array($action, ["store", "update"]))
     <x-button.submit :resource="$resource" :color="$color" :label="$label" :icon="$icon" :showText="$showText" />

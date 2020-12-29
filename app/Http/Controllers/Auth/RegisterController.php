@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Area;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -51,8 +53,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'rut' => ['required', 'string', 'min:7', 'max:8', 'regex:/^[0-9]+$/', 'unique:users,rut'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['nullable', 'string'],
+            'phone_number' => ['nullable', 'string'],
         ]);
     }
 
@@ -64,13 +69,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'rut' => $data['rut'],
+            'address' => $data['address'],
+            'phone_number' => $data['phone_number'],
+            'admin' => true
         ]);
 
-        $user->areas()->sync([1, 2, 3, 4, 5]);
+        // Obtener un arreglo con los IDs de todas las áreas.
+        $areas = Arr::pluck(Area::all(), 'id');
+
+        // Al administrador se le asignan todas las áreas por defecto.
+        $user->areas()->sync($areas);
 
         return $user;
     }

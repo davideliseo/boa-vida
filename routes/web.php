@@ -9,12 +9,24 @@ use App\Http\Controllers\{
     UserController,
     SaleController,
 };
+use App\Models\User;
 
-Auth::routes();
+if (User::where("admin", "=", "true")->exists()) {
+    Auth::routes([
+        'register' => false
+    ]);
+} else {
+    Auth::routes();
+}
+
+Route::get('/users/{user}/new-password', [UserController::class, 'newPassword'])->name('users.new-password');
+
 Route::middleware('auth')->group(function () {
     Route::redirect('/', '/products');
 
-    Route::get('home', function(){ return redirect('products'); })->name('home');
+    Route::get('home', function () {
+        return redirect('products');
+    })->name('home');
 
     Route::resources([
         'products'  => ProductController::class,

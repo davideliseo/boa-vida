@@ -18,6 +18,7 @@ class SaleSeeder extends Seeder
         DB::table('sales')->insert([
             'amount' => 9000,
             'status' => 'completed',
+            'type' => 'receipt',
             'date' => new DateTime("today"),
             'client_name' => 'Cliente 1',
             'client_phone_number' => '+569 9876 4321',

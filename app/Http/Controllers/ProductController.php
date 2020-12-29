@@ -51,8 +51,7 @@ class ProductController extends Controller
         $dataExceptSupplies = array_diff_key($data, ['supplies' => null]);
 
         // Creación y obtención del producto creado
-        Product::create($dataExceptSupplies);
-        $product = Product::latest('id')->first();
+        $product = Product::create($dataExceptSupplies);
 
         // Asignación de insumos
         $supplies = json_decode($data['supplies'], true);

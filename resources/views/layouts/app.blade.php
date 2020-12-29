@@ -129,13 +129,6 @@
                                         <span class="sr-only"> {{ __('Toggle navigation') }} </span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex align-items-center">
-                                                <i class="material-icons-round pr-2 md-18"> settings </i>
-                                                {{ __('Ajustes') }}
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             <div class="d-flex align-items-center">

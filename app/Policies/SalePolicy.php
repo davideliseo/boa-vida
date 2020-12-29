@@ -18,7 +18,7 @@ class SalePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -30,7 +30,7 @@ class SalePolicy
      */
     public function view(User $user, Sale $sale)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -41,7 +41,7 @@ class SalePolicy
      */
     public function create(User $user)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -53,7 +53,7 @@ class SalePolicy
      */
     public function update(User $user, Sale $sale)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -65,7 +65,7 @@ class SalePolicy
      */
     public function delete(User $user, Sale $sale)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -77,7 +77,7 @@ class SalePolicy
      */
     public function restore(User $user, Sale $sale)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 
     /**
@@ -89,6 +89,6 @@ class SalePolicy
      */
     public function forceDelete(User $user, Sale $sale)
     {
-        return $user->anyArea('admin', 'sales');
+        return $user->hasArea('sales');
     }
 }

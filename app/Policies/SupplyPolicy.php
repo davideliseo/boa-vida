@@ -18,7 +18,7 @@ class SupplyPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -30,7 +30,7 @@ class SupplyPolicy
      */
     public function view(User $user, Supply $supply)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -41,7 +41,7 @@ class SupplyPolicy
      */
     public function create(User $user)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -53,7 +53,7 @@ class SupplyPolicy
      */
     public function update(User $user, Supply $supply)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -65,7 +65,7 @@ class SupplyPolicy
      */
     public function delete(User $user, Supply $supply)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -77,7 +77,7 @@ class SupplyPolicy
      */
     public function restore(User $user, Supply $supply)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 
     /**
@@ -89,6 +89,6 @@ class SupplyPolicy
      */
     public function forceDelete(User $user, Supply $supply)
     {
-        return $user->anyArea('admin', 'supplies');
+        return $user->hasArea('supplies');
     }
 }

@@ -53,8 +53,7 @@ class SupplyController extends Controller
 
 
         // Creación y obtención del insumo creado
-        Supply::create($dataExceptSupplier);
-        $supply = Supply::latest('id')->first();
+        $supply = Supply::create($dataExceptSupplier);
 
         // Asignación de áreas
         $supplierId = json_decode($data['supplier_id'], true);

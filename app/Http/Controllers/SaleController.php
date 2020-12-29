@@ -52,8 +52,7 @@ class SaleController extends Controller
         $dataExceptProducts = array_diff_key($data, ['products' => null]);
 
         // Creación y obtención de la venta creada
-        Sale::create($dataExceptProducts);
-        $sale = Sale::latest('id')->first();
+        $sale = Sale::create($dataExceptProducts);
 
         // Asignación de productos
         $products = json_decode($data['products'], true);
